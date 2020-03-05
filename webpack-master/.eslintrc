@@ -1,0 +1,30 @@
+{
+  "globals": {
+    "window": true,
+    "localStorage": true,
+    "document": true,
+    "PIXI": true,
+    "XMLHttpRequest": true,
+    "FormData": true,
+    "pageYOffset": true,
+    "google": true,
+    "GoogleMapsLoader": true,
+    "IS_DEV": true
+  },
+  "extends": "airbnb-base",
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module",
+    "allowImportExportEverywhere": true
+  },
+  "rules": {
+    "linebreak-style": 0,
+    "no-tabs": "off",
+    "indent": ["error", "tab"],
+    "no-new": 0,
+    "global-require": 0,
+    "no-param-reassign": 0,
+    "import/no-named-as-default": 0,
+    "import/no-named-as-default-member": 0
+  }
+}

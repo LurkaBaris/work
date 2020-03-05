@@ -1,0 +1,7 @@
+extends ../layouts/main.pug
+
+block vars
+	- var indexPage = require('../data/indexPage.json');
+block content
+	.blocks
+		div= JSON.stringify(indexPage)

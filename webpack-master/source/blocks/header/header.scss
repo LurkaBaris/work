@@ -1,0 +1,61 @@
+$parent: header;
+
+@include block($parent) {
+  background-color: $black;
+
+  @include element($parent, "container") {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 37px 0;
+  }
+
+  @include element($parent, "telephone") {
+    font-family: $Museo;
+    font-weight: 300;
+    font-size: 16px;
+    color: $white;
+  }
+
+  @include element($parent, "nav") {
+    margin-bottom: 62px;
+  }
+
+  @include element($parent, "content") {
+     margin-left: 15%;
+  }
+
+  @include element($parent, "title-span"){
+    position: relative;
+    color: $red;
+    &::after{
+      content: "";
+      background-image: url(./../../assets/images/Vector.png);
+      background-repeat: no-repeat;
+      background-position: -17px -90px;
+      position: absolute;
+      bottom: 15px;
+      left: 0;
+      width: 100%;
+      height: 64%;
+    }
+  }
+
+  @include element($parent, "title") {
+    max-width: 913px;
+    margin-bottom: 55px;
+    font-family: $Museo;
+    font-weight: 600;
+    font-size: 64px;
+    color: $white;
+  }
+
+  @include element($parent,"sub-title") {
+    max-width: 897px;
+    font-family: $Museo;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 30px;
+    color: #fff;
+  }
+}
