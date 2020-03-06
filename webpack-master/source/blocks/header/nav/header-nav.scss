@@ -1,28 +1,32 @@
 $parent: header-nav;
+@include block($parent) {
+  margin-top: rem(8);/*уточнить*/
 
-@include element($parent, "link") {
-  margin-right: 53px;
-  padding-bottom: 9px;
-  font-family: $Museo;
-  font-weight: 300;
-  font-size: 16px;
-  color: #898a8c;
-  border-bottom: 1px solid transparent;
-  will-change: color, border-bottom;
-  cursor: pointer;
-  transition: $ease all;
+  @include element($parent, "link") {
+    //display: inline-block;
+    margin-right: rem(53);
+    padding-bottom: rem(9);
+    font-family: $Museo;
+    font-weight: 300;
+    font-size: rem(16);
+    color: #898a8c;
+    border-bottom: rem(1) solid transparent;
+    will-change: color, border-bottom;
+    cursor: pointer;
+    transition: $ease color, border-bottom-color;
 
-  &:last-child {
-    margin-right: 0;
-  }
+    &:last-child {
+      margin-right: 0;
+    }
 
-  &:hover {
-    color: $white;
-    border-bottom: 1px solid $white;
-    transition: $ease all;
-  }
+    &:hover {
+      color: $white;
+      border-bottom: rem(1) solid $white;
+      transition: $ease all;
+    }
 
-  @include modifier(&, "margin") {
-    margin-right: 15px;
+    @include modifier(&, "margin") {
+      margin-right: rem(15);
+    }
   }
 }

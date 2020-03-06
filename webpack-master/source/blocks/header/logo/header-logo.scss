@@ -2,6 +2,6 @@ $parent: header-logo;
 
 @include block($parent) {
   font-family: $Open;
-  font-size: 40px;
+  font-size: rem(40);
   color: $white;
 }

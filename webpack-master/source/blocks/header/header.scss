@@ -3,38 +3,46 @@ $parent: header;
 @include block($parent) {
   background-color: $black;
 
+  .header-logo {
+    margin-right: rem(219);
+  }
+
+  .header-nav {
+    margin-right: rem(147);
+  }
+
   @include element($parent, "container") {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 37px 0;
+    padding: rem(37) 0;
   }
 
   @include element($parent, "telephone") {
+    margin-top: rem(8);
     font-family: $Museo;
     font-weight: 300;
-    font-size: 16px;
+    font-size: rem(16);
     color: $white;
   }
 
   @include element($parent, "nav") {
-    margin-bottom: 62px;
+    margin-bottom: rem(62);
   }
 
   @include element($parent, "content") {
-     margin-left: 15%;
+    margin-left: rem(220);
   }
 
-  @include element($parent, "title-span"){
+  @include element($parent, "title-span") {
     position: relative;
     color: $red;
-    &::after{
+    &::after {
       content: "";
-      background-image: url(./../../assets/images/Vector.png);
+      background-image: url("./../../assets/images/header-vector.png");
       background-repeat: no-repeat;
-      background-position: -17px -90px;
+      background-position: rem(-17) rem(-90);
       position: absolute;
-      bottom: 15px;
+      bottom: rem(15);
       left: 0;
       width: 100%;
       height: 64%;
@@ -42,20 +50,20 @@ $parent: header;
   }
 
   @include element($parent, "title") {
-    max-width: 913px;
-    margin-bottom: 55px;
+    max-width: rem(913);
+    margin-bottom: rem(55);
     font-family: $Museo;
     font-weight: 600;
-    font-size: 64px;
+    font-size: rem(64);
     color: $white;
   }
 
-  @include element($parent,"sub-title") {
-    max-width: 897px;
+  @include element($parent, "sub-title") {
+    max-width: rem(897);
     font-family: $Museo;
     font-weight: 300;
-    font-size: 20px;
-    line-height: 30px;
+    font-size: rem(20);
+    line-height: rem(30);
     color: #fff;
   }
 }
