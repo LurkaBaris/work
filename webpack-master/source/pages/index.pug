@@ -1,8 +1,12 @@
 extends ../layouts/main.pug
 include ../blocks/header/header.pug
+include ../blocks/experience/experience.pug
+include ../blocks/services/services.pug
 
 block vars
 	- var headerPage = require('../data/header/header.json');
 
 block content
 	+header(headerPage)
+	+experience
+	+services
