@@ -1,1 +1,0 @@
-require("./header-nav.scss")

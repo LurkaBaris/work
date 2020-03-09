@@ -1,7 +1,0 @@
-$parent: header-logo;
-
-@include block($parent) {
-  font-family: $Open;
-  font-size: rem(40);
-  color: $white;
-}
