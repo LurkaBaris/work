@@ -1,4 +1,5 @@
 $parent: header-nav;
+
 @include block($parent) {
   margin-top: rem(8);/*уточнить*/
 
@@ -11,7 +12,6 @@ $parent: header-nav;
     font-size: rem(16);
     color: #898a8c;
     border-bottom: rem(1) solid transparent;
-    will-change: color, border-bottom;
     cursor: pointer;
     transition: $ease color, border-bottom-color;
 
