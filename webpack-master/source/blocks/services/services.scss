@@ -50,10 +50,6 @@ $parent: services;
 
   @include element($parent, "container") {
     display: flex;
-<<<<<<< HEAD
-=======
-    margin-bottom: 500px;/*!*/
->>>>>>> 625f9b90dc1d6d45e2d850fec1bc37818e8e944f
   }
 
   @include element($parent, "item-title") {

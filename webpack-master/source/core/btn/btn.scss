@@ -2,13 +2,8 @@ $parent: btn;
 
 .btn-container {
   position: relative;
-<<<<<<< HEAD
   width: rem(291);
   height: rem(87);
-=======
-  width: rem(289);
-  height: rem(85);
->>>>>>> 625f9b90dc1d6d45e2d850fec1bc37818e8e944f
   border: rem(1) solid $white;
 }
 
@@ -24,7 +19,6 @@ $parent: btn;
   color: $black;
   background-color: $white;
   cursor: pointer;
-<<<<<<< HEAD
   transition: $ease left, $ease bottom;
 
   &:hover {
@@ -32,6 +26,4 @@ $parent: btn;
     left: 0;
     transition: $ease left, $ease bottom;
   }
-=======
->>>>>>> 625f9b90dc1d6d45e2d850fec1bc37818e8e944f
 }
