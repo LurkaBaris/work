@@ -1,0 +1,30 @@
+$parent: header-nav;
+
+@include block($parent) {
+  margin-left: rem(88);
+  @include element($parent, "link") {
+    margin-right: rem(53);
+    padding-bottom: rem(9);
+    font-family: $Museo;
+    font-weight: 300;
+    font-size: rem(16);
+    color: #898a8c;
+    border-bottom: rem(1) solid transparent;
+    cursor: pointer;
+    transition: $ease color, border-bottom-color;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      color: $white;
+      border-bottom: rem(1) solid $white;
+      transition: $ease all;
+    }
+
+    @include modifier(&, "margin") {
+      margin-right: rem(15);
+    }
+  }
+}

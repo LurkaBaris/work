@@ -1,0 +1,30 @@
+// Breakpoints
+$min-media-sizes: (
+	"m": 375px,
+	"t": 768px,
+	"d": 1024px,
+	"xl": 1280px,
+	"xxl": 1440px
+);
+
+$max-media-sizes: (
+	"sMax": 374px,
+	"mMax": 767px,
+	"tMax": 1023px,
+	"dMax": 1279px
+);
+
+// Colors
+$black: #000;
+$white: #fff;
+$red: #fc3636;
+$gray: #898A8C;
+// Other
+$ease: 0.3s ease;
+
+//Fonts
+$Open : "Open Sans", sans-serif;
+$Museo : "MuseoSansCyrl", sans-serif;
+
+//transition
+$ease : 0.3s ease;

@@ -1,0 +1,10 @@
+mixin popup(info)
+	.popup.popup--common(id=info.id)
+		.popup__content-wrap
+			.popup__content
+				button.popup__close
+					.popup__close-icon
+				if (info.id === 'testPopup')
+					.popup__title.popup__title--test!= info.title
+				if (info.id === 'other')
+					.popup__title.popup__title--other!= info.title
