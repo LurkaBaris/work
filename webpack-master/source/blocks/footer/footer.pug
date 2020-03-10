@@ -1,0 +1,41 @@
+include ../../blocks/footer/contact/footer-contact.pug
+
+mixin footer
+    footer.footer
+        +footer-contact
+        .page-container
+            .footer__container
+                .footer__left
+                    .footer__title Brief us with your key targets.
+                    a.footer__btn Let’s talk
+                        svg.footer__arrow
+                            use(xlink:href=loadAssets('./svg/red-arrow.svg'))
+                .footer__right
+                    .footer__social-links
+                        .footer__title.footer__title--social Get in touch
+                        a.footer__social-link
+                            svg.footer__icon.footer__icon--fb
+                                use(xlink:href=loadAssets('./svg/fb.svg'))
+                        a.footer__social-link
+                            svg.footer__icon.footer__icon--bh
+                                use(xlink:href=loadAssets('./svg/behance.svg'))
+                        a.footer__social-link
+                            svg.footer__icon.footer__icon--inst
+                                use(xlink:href=loadAssets('./svg/inst.svg'))
+                        a.footer__social-link
+                            svg.footer__icon.footer__icon--wechat
+                                use(xlink:href=loadAssets('./svg/wechat.svg'))
+                        a.footer__social-link
+                            svg.footer__icon.footer__icon--group
+                                use(xlink:href=loadAssets('./svg/group.svg'))
+                    .footer__social-links
+                        a.footer__contact-info.footer__red-link hello@gem.com
+                        a.footer__contact-info.footer__red-link +7 (495) 899-8998
+                    .footer__social-links
+                        a.footer__link Our offices
+                        a.footer__link Join the team
+                        a.footer__link Terms of use
+        .page-container
+            .footer__copyright
+                .footer__copyright-item © 2019 Gem. All rights reserved.
+                .footer__copyright-item Design by <span class="footer__copyright-company">idem.agency</span>

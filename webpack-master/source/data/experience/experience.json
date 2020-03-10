@@ -1,0 +1,38 @@
+{
+  "exp1": {
+    "sources": {
+      "mobile": [
+        "./assets/images/exp__img1.png",
+        "./assets/images/exp__img1.png"
+      ],
+      "tablet": [
+        "./assets/images/exp__img1.png",
+        "./assets/images/exp__img1.png"
+      ],
+      "desktop": [
+        "./assets/images/exp__img1.png",
+        "./assets/images/exp__img1.png"
+      ]
+    },
+    "alt": "exp__img1",
+    "title": "exp__img1"
+  },
+  "exp2": {
+    "sources": {
+      "mobile": [
+        "./assets/images/exp__img2.png",
+        "./assets/images/exp__img2.png"
+      ],
+      "tablet": [
+        "./assets/images/exp__img2.png",
+        "./assets/images/exp__img2.png"
+      ],
+      "desktop": [
+        "./assets/images/exp__img2.png",
+        "./assets/images/exp__img2.png"
+      ]
+    },
+    "alt": "exp__img2",
+    "title": "exp__img2"
+  }
+}

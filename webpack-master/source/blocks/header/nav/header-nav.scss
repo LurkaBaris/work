@@ -1,10 +1,13 @@
 $parent: header-nav;
 
 @include block($parent) {
-  margin-top: rem(8);/*уточнить*/
+  margin-left: rem(88);
+
+  @include max-media("tMax") {
+    display: none;
+  }
 
   @include element($parent, "link") {
-    //display: inline-block;
     margin-right: rem(53);
     padding-bottom: rem(9);
     font-family: $Museo;

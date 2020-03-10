@@ -46,11 +46,33 @@ $parent: services;
       padding-top: rem(374);
       padding-bottom: rem(74);
     }
+
+    @media (max-width: $t930) {
+      width: 50%;
+      border-bottom: none;
+
+      &:nth-child(2n) {
+        border-right: rem(1) solid $black;
+      }
+
+      &:last-child {
+        width: 100%;
+        border-bottom: rem(1) solid $black;
+      }
+    }
+
+    @include max-media("sMax") {
+      width: 100%;
+      border-right: rem(1) solid $black;
+    }
   }
 
   @include element($parent, "container") {
     display: flex;
-    margin-bottom: 500px;/*!*/
+
+    @media (max-width: $t930) {
+      flex-wrap: wrap;
+    }
   }
 
   @include element($parent, "item-title") {
@@ -67,6 +89,11 @@ $parent: services;
       max-width: rem(155);
       margin: 0 auto;
       text-align: left;
+
+      @media (max-width: $t930) {
+        max-width: none;
+        text-align: center;
+      }
     }
   }
 

@@ -1,0 +1,108 @@
+$parent: footer-contact;
+
+@include block($parent) {
+  display: flex;
+  justify-content: space-between;
+  padding-top: rem(12);
+  margin-bottom: rem(118);
+  margin-right: rem(39);
+
+  @include max-media("tMax") {
+    flex-direction: column;
+    margin-right: 0;
+    text-align: center;
+  }
+
+  @include element($parent, "title") {
+    max-width: rem(523);
+    font-family: $Museo;
+    font-weight: 500;
+    font-size: rem(54);
+    line-height: rem(76);
+    color: $white;
+
+    @include max-media("tMax") {
+      max-width: none;
+      margin-bottom: rem(50);
+    }
+  }
+
+  @include element($parent, "input-container") {
+    margin-bottom: rem(79);
+  }
+
+  @include element($parent, "input") {
+    display: block;
+    width: 100%;/*! 496px*/
+    margin-bottom: rem(40);
+    padding: 0 rem(2) rem(15) rem(2);
+    font-family: $Museo;
+    font-weight: 300;
+    font-size: rem(16);
+    color: $gray;
+    background-color: transparent;
+    border-bottom: rem(1) solid $gray;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include max-media("tMax") {
+      width: 65%;
+      margin: 0 auto;
+      margin-bottom: rem(40);
+    }
+
+    @include max-media("sMax") {
+      width: 85%;
+    }
+  }
+
+  @include element($parent, "rules") {
+    display: inline-block;
+    max-width: rem(181);
+    font-family: $Museo;
+    font-weight: 300;
+    font-size: rem(12);
+    line-height: rem(22);
+    color: $white;
+  }
+
+  @include element($parent, "btn") {
+    display: inline-block;
+    width: rem(274);
+    margin-right: rem(37);
+
+    @media (max-width: $m533) {
+      display: block;
+      margin-right: 0;
+      margin: 0 auto;
+      margin-bottom: 10px;
+    }
+  }
+
+  @include element($parent, "title-span") {
+    position: relative;
+    color: $red;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: rem(11);
+      left: 0;
+      width: 100%;
+      height: 64%;
+      background-image: url("./../../assets/images/header-vector.png");
+      background-repeat: no-repeat;
+      background-position: rem(-17) rem(-36);
+    }
+
+    @include modifier($parent, "transform") {
+      &::after {
+        bottom: 11px;
+        left: 0;
+        background-position: -33px -87px;
+        transform: rotate(-10.23deg);
+      }
+    }
+  }
+}

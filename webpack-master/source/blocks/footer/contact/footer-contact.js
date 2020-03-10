@@ -1,0 +1,1 @@
+require("./footer-contact.scss");

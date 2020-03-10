@@ -1,5 +1,4 @@
 $parent: experience;
-$indent: 184;
 
 @include block($parent) {
   padding-top: rem(134);
@@ -9,25 +8,43 @@ $indent: 184;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-
-    @include modifier(&,"width") {
-      max-width: rem(1100);
-      margin-left: rem(220);
-    }
+    margin-left: rem(109);
 
     @include modifier(&, "justify-end") {
       justify-content: flex-end;
+      margin-left: 0;
+    }
+
+    @include max-media("tMax") {
+      margin-left: 0;
+    }
+
+    @media (max-width: $t930) {
+      flex-direction: column;
     }
   }
 
   @include element($parent, "content") {
-
-    @include modifier(&,"black") {
+    @include modifier(&, "black") {
       background-color: $black;
     }
-    @include modifier(&,"padding") {
+
+    @include modifier(&, "padding") {
       padding: rem(169) rem(170) rem(143) rem(188);
+
+      @media (max-width: $t930) {
+        width: 100%;
+        padding-left: rem(10);
+        padding-right: rem(10);
+      }
+    }
+
+    @media (max-width: $t930) {
+      margin-bottom: rem(25);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -39,7 +56,15 @@ $indent: 184;
     }
 
     @include modifier(&, "margin") {
-      padding-top: rem($indent);
+      padding-top: rem(184);
+
+      @media (max-width: $t930) {
+        padding-top: 0;
+      }
+    }
+
+    @media (max-width: $t930) {
+      margin-bottom: rem(70);
     }
   }
 
@@ -50,6 +75,11 @@ $indent: 184;
     font-weight: 600;
     font-size: rem(54);
     color: $black;
+
+    @media (max-width: $t930) {
+      max-width: none;
+      text-align: center;
+    }
   }
 
   @include element($parent, "paragraph") {
@@ -72,16 +102,22 @@ $indent: 184;
     &:last-child {
       margin-bottom: 0;
     }
+
+    @media (max-width: $t930) {
+      max-width: rem(640);
+      margin: 0 auto;
+    }
   }
 
   @include element($parent, "title-span") {
     position: relative;
     color: $red;
+
     &::after {
       content: "";
       position: absolute;
-      bottom: rem(4);
       left: 0;
+      bottom: rem(4);
       width: 100%;
       height: 64%;
       background-image: url("./../../assets/images/vector-white.png");
@@ -98,14 +134,15 @@ $indent: 184;
 
     @include modifier(&, "position") {
       position: absolute;
-    /*left: 0;*/
-      right: rem(598);
-      bottom: rem($indent);
-    }
+      top: rem(-184);
+      left: 0;
+      margin-right: rem(508);
 
-    @include modifier(&, "size") {
-      /* width: rem(602);
-      height: rem(652); */
+      @media (max-width: $t930) {
+        position: static;
+        margin-bottom: rem(25);
+        margin-right: 0;
+      }
     }
   }
 }
