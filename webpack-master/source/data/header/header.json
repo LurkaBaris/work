@@ -1,6 +1,6 @@
 {
   "links": ["About", "Competencies", "Process", "Work", "Contact"],
-  "lang": ["Ru","Cn"],
+  "lang": ["Ru", "Cn"],
   "telephone" : "+7 495 232 32 22",
   "picture": {
     "sources": {
@@ -10,11 +10,11 @@
       ],
       "tablet": [
         "./assets/images/header-img.png",
-        "./assets/images/header-img.png"
+        "./assets/images/header-img.webp"
       ],
       "desktop": [
         "./assets/images/header-img.png",
-        "./assets/images/header-img.png"
+        "./assets/images/header-img.webp"
       ]
     },
     "alt": "header-img",

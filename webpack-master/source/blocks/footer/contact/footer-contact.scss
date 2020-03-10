@@ -7,6 +7,10 @@ $parent: footer-contact;
   margin-bottom: rem(118);
   margin-right: rem(39);
 
+  @media (max-width: $d1095) {
+    margin-right: 0;
+  }
+
   @include max-media("tMax") {
     flex-direction: column;
     margin-right: 0;
@@ -77,7 +81,7 @@ $parent: footer-contact;
       display: block;
       margin-right: 0;
       margin: 0 auto;
-      margin-bottom: 10px;
+      margin-bottom: rem(10);
     }
   }
 
@@ -98,9 +102,9 @@ $parent: footer-contact;
 
     @include modifier($parent, "transform") {
       &::after {
-        bottom: 11px;
+        bottom: rem(11);
         left: 0;
-        background-position: -33px -87px;
+        background-position: rem(-33) rem(-87);
         transform: rotate(-10.23deg);
       }
     }

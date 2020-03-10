@@ -21,14 +21,24 @@
             <div class="header-nav"><a class="header-nav__link">About</a><a class="header-nav__link">Competencies</a><a class="header-nav__link">Process</a><a class="header-nav__link">Work</a><a class="header-nav__link">Contact</a><a class="header-nav__link header-nav__link--margin">Ru</a><a class="header-nav__link header-nav__link--margin">Cn</a>
             </div>
             <div class="header__telephone">+7 495 232 32 22</div>
+            <div class="header__burger-btn"></div>
           </div>
         </div>
         <div class="header__content">
           <div class="page-container">
-            <div class="header__title"><span class="header__title-span">Gem</span> Expo - international exhibition and event company</div>
-            <div class="header__sub-title">We believe that each event is a new opportunity for cooperation, development and promotion for our Customers. We strive to help our Clients improve their business.</div>
+            <div class="header__text-content">
+              <div class="header__title"><span class="header__title-span">Gem</span> Expo - international exhibition and event company</div>
+              <div class="header__sub-title">We believe that each event is a new opportunity for cooperation, development and promotion for our Customers. We strive to help our Clients improve their business.</div>
+            </div>
           </div>
-          <picture class="header__img"><img src="./assets/images/header-img.png" srcset="../../assests/images/header-img_X2.webp 2x"></picture>
+          <picture class="picture header__img">
+            <source srcset="./assets/images/header-img.png" media="(max-width: 767px)">
+            <source srcset="./assets/images/header-img.png" media="(max-width: 767px)">
+            <source srcset="./assets/images/header-img.png" media="(min-width: 768px) and (max-width: 1279px)">
+            <source srcset="./assets/images/header-img.webp" media="(min-width: 768px) and (max-width: 1279px)">
+            <source srcset="./assets/images/header-img.png" media="(min-width: 1280px)">
+            <source srcset="./assets/images/header-img.webp" media="(min-width: 1280px)"><img src="./assets/images/header-img.png" alt="header-img" title="header-img">
+          </picture>
           <div class="btn-container header__btn-container">
             <button class="btn">Plan a project</button>
           </div>
@@ -42,14 +52,28 @@
                 <div class="experience__item-title">Team over <span class="experience__title-span">17</span> <span class="experience__title-span">years</span> of experience</div>
                 <p class="experience__paragraph">Developing the business projects of our Clients, GEM Expo exports its services to the most prestigious exhibition centers of the World and offers its Clients a comprehensive service around the World at the highest professional level</p>
               </div>
-              <picture class="experience__img"><img src="./assets/images/experience__img1.png" alt="experience__img1" srcset="./assets/images/experience__img1_X2.webp 2x"></picture>
+              <picture class="picture experience__img">
+                <source srcset="./assets/images/exp__img1.png" media="(max-width: 767px)">
+                <source srcset="./assets/images/exp__img1.png" media="(max-width: 767px)">
+                <source srcset="./assets/images/exp__img1.png" media="(min-width: 768px) and (max-width: 1279px)">
+                <source srcset="./assets/images/exp__img1.webp" media="(min-width: 768px) and (max-width: 1279px)">
+                <source srcset="./assets/images/exp__img1.png" media="(min-width: 1280px)">
+                <source srcset="./assets/images/exp__img1.webp" media="(min-width: 1280px)"><img src="./assets/images/exp__img1.png" alt="exp__img1" title="exp__img1">
+              </picture>
             </div>
           </div>
         </div>
         <div class="experience__item experience__item--margin">
           <div class="page-container">
             <div class="experience__container experience__container--justify-end">
-              <picture class="experience__img experience__img--position experience__img--size"><img src="./assets/images/exp__img2.png" alt="experience__img2"></picture>
+              <picture class="picture experience__img experience__img--position">
+                <source srcset="./assets/images/exp__img2.png" media="(max-width: 767px)">
+                <source srcset="./assets/images/exp__img2.png" media="(max-width: 767px)">
+                <source srcset="./assets/images/exp__img2.png" media="(min-width: 768px) and (max-width: 1279px)">
+                <source srcset="./assets/images/exp__img2.webp" media="(min-width: 768px) and (max-width: 1279px)">
+                <source srcset="./assets/images/exp__img2.png" media="(min-width: 1280px)">
+                <source srcset="./assets/images/exp__img2.webp" media="(min-width: 1280px)"><img src="./assets/images/exp__img2.png" alt="exp__img2" title="exp__img2">
+              </picture>
               <div class="experience__content experience__content--black experience__content--padding">
                 <p class="experience__paragraph experience__paragraph--white experience__paragraph--width">We are ready to develop and increase the success of our Clients together in exhibition, advertising,expo and event projects, which are based on a strong team of professionals, ambitious goals, modern technologies, where our satisfied Clients are our main motivation.</p>
                 <p class="experience__paragraph experience__paragraph--white experience__paragraph--width">We will be glad to become your strategic Partner for Expo and Event projects in Russia.</p>
@@ -98,7 +122,7 @@
       <footer class="footer">
         <div class="page-container">
           <div class="footer-contact">
-            <div class="footer-contact__title">Send an application and we will send you our portfolio</div>
+            <div class="footer-contact__title">Send an application and we will send you our <span class="footer-contact__title-span footer-contact__title-span--transform">portf</span><span class="footer-contact__title-span">olio</span></div>
             <form class="footer-contact__form">
               <div class="footer-contact__input-container">
                 <input class="footer-contact__input" placeholder="Name">
@@ -153,7 +177,7 @@
     </div>
     <!-- +footer(footerData)-->
     <div class="popup-layout"></div>
-    <script type="text/javascript" src="./assets/scripts/chunk/0-5254cbf3c71411c66939.chunk.js" async defer></script>
+    <script type="text/javascript" src="./assets/scripts/chunk/0-f3c911303fa49e6f034b.chunk.js" async defer></script>
     <script type="text/javascript" src="./assets/scripts/common.bundle.js" async defer></script>
     <script type="text/javascript" src="./assets/scripts/index.bundle.js" async defer></script>
   </body>

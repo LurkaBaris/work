@@ -11,6 +11,18 @@ $parent: footer;
     justify-content: space-between;
     margin-right: rem(66);
     margin-bottom: rem(62);
+
+    @include max-media("tMax") {
+      flex-direction: column;
+      margin-right: 0;
+    }
+  }
+
+  @include element($parent, "item") {
+    @include max-media("tMax") {
+      margin-bottom: rem(40);
+      text-align: center;
+    }
   }
 
   @include element($parent, "title") {
@@ -24,6 +36,10 @@ $parent: footer;
       margin-bottom: 0;
       margin-right: rem(66);
       font-size: rem(18);
+
+      @include max-media("tMax") {
+        margin-right: 0;
+      }
     }
   }
 
@@ -45,8 +61,21 @@ $parent: footer;
     display: flex;
     align-items: center;
     margin-bottom: rem(40);
+
+    @include modifier($parent, "column-xs") {
+      @include max-media("sMax") {
+        flex-direction: column;
+      }
+    }
+
     &:last-child {
       margin-bottom: 0;
+    }
+
+    @include max-media("tMax") {
+      justify-content: space-around;
+      margin-bottom: rem(40);
+      text-align: center;
     }
   }
 
@@ -56,11 +85,15 @@ $parent: footer;
     &:last-child {
       margin-right: 0;
     }
+
+    @include max-media("tMax") {
+      margin-right: 0;
+    }
   }
 
   @include element($parent, "icon") {
-    width: 15px;
-    height: 15px;
+    width: rem(15);
+    height: rem(15);
 
     @include modifier($parent, "fb") {
       width: rem(8);
@@ -97,6 +130,10 @@ $parent: footer;
     &:last-child {
       margin-right: 0;
     }
+
+    @include max-media("tMax") {
+      margin-right: 0;
+    }
   }
 
   @include element($parent, "red-link") {
@@ -111,8 +148,21 @@ $parent: footer;
     font-weight: 300;
     font-size: rem(16);
     color: #fff;
+
     &:last-child {
       margin-right: 0;
+    }
+
+    @include max-media("tMax") {
+      margin-right: 0;
+    }
+
+    @include max-media("sMax") {
+      margin-bottom: rem(20);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -120,6 +170,10 @@ $parent: footer;
     display: flex;
     justify-content: space-between;
     margin-right: rem(246);
+
+    @include max-media("tMax") {
+      margin-right: 0;
+    }
   }
 
   @include element($parent, "copyright-item") {
@@ -127,6 +181,12 @@ $parent: footer;
     font-weight: 300;
     font-size: rem(16);
     color: $gray;
+
+    @include modifier($parent, "text-rigth") {
+      @include max-media("mMax") {
+        text-align: right;
+      }
+    }
   }
 
   @include element($parent, "copyright-company") {

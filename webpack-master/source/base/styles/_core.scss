@@ -116,7 +116,7 @@ svg {
 }
 
 .page-container {
-	max-width: 1200px;
+	max-width: rem(1200);
 	margin: 0 auto;
 
 	@include max-media("dMax") {
