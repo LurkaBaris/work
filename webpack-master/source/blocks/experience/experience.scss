@@ -1,7 +1,11 @@
 $parent: experience;
 
 @include block($parent) {
-  padding-top: rem(134);
+  padding-top: rem(130);
+
+  @include max-media("mMax") {
+    padding-top: rem(80);
+  }
 
   @include element($parent, "container") {
     position: relative;
@@ -19,8 +23,15 @@ $parent: experience;
       margin-left: 0;
     }
 
-    @media (max-width: $t930) {
+    @include max-media("mMax") {
       flex-direction: column;
+      align-items: flex-start;
+    }
+
+    @include modifier(&, "reverse-mm") {
+      @include max-media("mMax") {
+        flex-direction: column-reverse;
+      }
     }
   }
 
@@ -31,20 +42,6 @@ $parent: experience;
 
     @include modifier(&, "padding") {
       padding: rem(169) rem(170) rem(143) rem(188);
-
-      @media (max-width: $t930) {
-        width: 100%;
-        padding-left: rem(10);
-        padding-right: rem(10);
-      }
-    }
-
-    @media (max-width: $t930) {
-      margin-bottom: rem(25);
-
-      &:last-child {
-        margin-bottom: 0;
-      }
     }
   }
 
@@ -74,11 +71,14 @@ $parent: experience;
     font-family: $Museo;
     font-weight: 600;
     font-size: rem(54);
+    line-height: rem(76);
     color: $black;
 
-    @media (max-width: $t930) {
+    @include max-media("mMax") {
       max-width: none;
-      text-align: center;
+      margin-bottom: rem(20);
+      font-size: rem(42);
+      line-height: rem(50);
     }
   }
 
@@ -132,17 +132,19 @@ $parent: experience;
       height: 100%;
     }
 
+
+    @include max-media("mMax") {
+      position: static;
+      height: 360px;
+      margin-bottom: rem(30);
+      margin-right: 0;
+    }
+
     @include modifier(&, "position") {
       position: absolute;
       top: rem(-184);
       left: 0;
       margin-right: rem(508);
-
-      @media (max-width: $t930) {
-        position: static;
-        margin-bottom: rem(25);
-        margin-right: 0;
-      }
     }
   }
 }

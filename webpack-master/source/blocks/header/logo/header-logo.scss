@@ -4,4 +4,8 @@ $parent: header-logo;
   font-family: $Open;
   font-size: rem(40);
   color: $white;
+
+  @include max-media("mMax") {
+    font-size: rem(30);
+  }
 }

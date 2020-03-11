@@ -5,11 +5,13 @@ include ../blocks/services/services.pug
 include ../blocks/footer/footer.pug
 
 block vars
-	- var headerPage = require('../data/header/header.json');
-	- var experiencePage = require('../data/experience/experience.json');
+	- var headerPage = require('../data/about/header/header.json');
+	- var experiencePage = require('../data/about/experience/experience.json');
+	- var servicesPage = require('../data/about/services/services.json');
+	- var footerPage = require('../data/about/footer/footer.json');
 
 block content
 	+header(headerPage)
 	+experience(experiencePage)
-	+services
-	+footer
+	+services(servicesPage)
+	+footer(footerPage)

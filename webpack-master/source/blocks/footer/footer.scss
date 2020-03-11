@@ -57,9 +57,10 @@ $parent: footer;
     height: rem(10);
   }
 
-  @include element($parent, "social-links") {
+  @include element($parent, "item-links") {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     margin-bottom: rem(40);
 
     @include modifier($parent, "column-xs") {
@@ -115,7 +116,7 @@ $parent: footer;
       height: rem(15);
     }
 
-    @include modifier($parent, "group") {
+    @include modifier($parent, "whats") {
       width: rem(18);
       height: rem(17);
     }
@@ -136,7 +137,7 @@ $parent: footer;
     }
   }
 
-  @include element($parent, "red-link") {
+  @include element($parent, "red") {
     padding-bottom: rem(5);
     color: $red;
     border-bottom: rem(1) solid $red;

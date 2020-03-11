@@ -14,7 +14,7 @@ mixin header(headerData)
     .header__content
       .page-container
         .header__text-content
-          .header__title <span class="header__title-span">Gem</span> Expo - international exhibition and event company
-          .header__sub-title We believe that each event is a new opportunity for cooperation, development and promotion for our Customers. We strive to help our Clients improve their business.
+          .header__title <span class="header__title-span">#{headerData.red_line}</span> #{headerData.title}
+          .header__sub-title #{headerData.sub_title}
       +picture(headerData.picture, "header__img")
-      +btn("Plan a project","header__btn-container")
+      +btn("Plan a project", "header__btn-container")

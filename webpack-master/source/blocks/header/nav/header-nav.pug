@@ -1,6 +1,10 @@
 mixin header-nav(arrLinks, arrLang)
     .header-nav
       each val in arrLinks
-          a.header-nav__link= val
-      each val in arrLang
-          a.header-nav__link.header-nav__link--margin= val
+        if(val.active)
+          a.header-nav__link.header-nav__link--active(href= val.href)= val.title
+        else
+          if (val.type)
+            a.header-nav__link.header-nav__link--margin(href= val.href)= val.title
+          else
+            a.header-nav__link(href= val.href)= val.title

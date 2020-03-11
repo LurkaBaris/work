@@ -1,12 +1,12 @@
 include ../../../core/btn/btn.pug
-
-mixin footer-contact
+mixin footer-contact(contactData)
+    -var inputs= contactData.inputs
     .page-container
         .footer-contact
-            .footer-contact__title Send an application and we will send you our <span class="footer-contact__title-span footer-contact__title-span--transform">portf</span><span class="footer-contact__title-span">olio</span>
+            .footer-contact__title !{contactData.title}
             form.footer-contact__form
                 .footer-contact__input-container
-                    input.footer-contact__input(placeholder= "Name")
-                    input.footer-contact__input(placeholder= "E-mail")
+                  each val in inputs
+                    input.footer-contact__input(placeholder= val.placeholder)
                 +btn("Send", "footer-contact__btn")
-                .footer-contact__rules By submitting the form you agree with the <a class="footer__red-link">Terms of conditions</a>
+                .footer-contact__rules !{contactData.rules}

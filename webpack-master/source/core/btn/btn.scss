@@ -19,11 +19,28 @@ $parent: btn;
   color: $black;
   background-color: $white;
   cursor: pointer;
+  overflow: hidden;
   transition: $ease left, $ease bottom;
 
   &:hover {
     bottom: 0;
     left: 0;
+    overflow: visible;
     transition: $ease left, $ease bottom;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: -13px;
+    left: 0;
+    width: 104%;
+    height: 116%;
+    background-color: transparent;
+  }
+
+  @include max-media("mMax"){
+    left: rem(7);
+    bottom: rem(9);
   }
 }

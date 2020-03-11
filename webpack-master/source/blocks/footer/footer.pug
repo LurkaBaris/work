@@ -1,41 +1,31 @@
 include ../../blocks/footer/contact/footer-contact.pug
 
-mixin footer
+mixin footer(footerData)
+    -var socialLinks = footerData.social_links
+    -var links = footerData.links
     footer.footer
-        +footer-contact
+        +footer-contact(footerData.contact)
         .page-container
             .footer__container
                 .footer__item
-                    .footer__title Brief us with your key targets.
-                    a.footer__btn Let’s talk
+                    .footer__title #{footerData.title}
+                    a.footer__btn #{footerData.btn}
                         svg.footer__arrow
                             use(xlink:href=loadAssets('./svg/red-arrow.svg'))
                 .footer__item
-                    .footer__social-links
-                        .footer__title.footer__title--social Get in touch
-                        a.footer__social-link
-                            svg.footer__icon.footer__icon--fb
-                                use(xlink:href=loadAssets('./svg/fb.svg'))
-                        a.footer__social-link
-                            svg.footer__icon.footer__icon--bh
-                                use(xlink:href=loadAssets('./svg/behance.svg'))
-                        a.footer__social-link
-                            svg.footer__icon.footer__icon--inst
-                                use(xlink:href=loadAssets('./svg/inst.svg'))
-                        a.footer__social-link
-                            svg.footer__icon.footer__icon--wechat
-                                use(xlink:href=loadAssets('./svg/wechat.svg'))
-                        a.footer__social-link
-                            svg.footer__icon.footer__icon--group
-                                use(xlink:href=loadAssets('./svg/group.svg'))
-                    .footer__social-links
-                        a.footer__contact-info.footer__red-link hello@gem.com
-                        a.footer__contact-info.footer__red-link +7 (495) 899-8998
-                    .footer__social-links.footer__social-links--column-xs
-                        a.footer__link Our offices
-                        a.footer__link Join the team
-                        a.footer__link Terms of use
+                    .footer__item-links
+                        .footer__title.footer__title--social #{footerData.title_social}
+                        each val in socialLinks
+                            a.footer__social-link(href= val.href)
+                                svg.footer__icon(class= "footer__icon--" + val.modifier)
+                                    use(xlink:href=loadAssets(val.svg))
+                    .footer__item-links
+                        .footer__contact-info.footer__red #{footerData.mail}
+                        .footer__contact-info.footer__red #{footerData.telephone}
+                    .footer__item-links.footer__item-links--column-xs
+                        each val in links
+                            a.footer__link(href= val.href) #{val.title}
         .page-container
             .footer__copyright
-                .footer__copyright-item © 2019 Gem. All rights reserved.
-                .footer__copyright-item.footer__copyright-item--text-rigth Design by <span class="footer__copyright-company">idem.agency</span>
+                .footer__copyright-item #{footerData.copyright}
+                .footer__copyright-item.footer__copyright-item--text-rigth !{footerData.copyright_design}

@@ -1,0 +1,57 @@
+{
+  "links": [
+    {
+      "title": "About",
+      "href": "/about.html",
+      "active": "true"
+    },
+    {
+      "title": "Competencies",
+      "href": "/competencies.html"
+    } ,
+    {
+      "title": "Process",
+      "href": "/process.html"
+    } ,
+    {
+      "title": "Work",
+      "href": "/work.html"
+    } ,
+    {
+      "title": "Contact",
+      "href": "/contact.html"
+    },
+    {
+      "title": "Ru",
+      "href": "/ru.html",
+      "type": "lang"
+    },
+    {
+      "title": "Cn",
+      "href": "/cn.html",
+      "type": "lang"
+    }
+  ],
+  "telephone" : "+7 495 232 32 22",
+  "picture": {
+    "sources": {
+      "mobile": [
+        "./assets/images/header-img_m.png",
+        "./assets/images/header-img_m.webp"
+      ],
+      "tablet": [
+        "./assets/images/header-img.png",
+        "./assets/images/header-img.webp"
+      ],
+      "desktop": [
+        "./assets/images/header-img.png",
+        "./assets/images/header-img.webp"
+      ]
+    },
+    "alt": "header-img",
+    "title": "header-img"
+  },
+  "red_line": "Gem",
+  "title": "Expo - international exhibition and event company",
+  "sub_title": " We believe that each event is a new opportunity for cooperation, development and promotion for our Customers. We strive to help our Clients improve their business."
+}

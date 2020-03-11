@@ -16,7 +16,7 @@ $parent: header-nav;
     color: #898a8c;
     border-bottom: rem(1) solid transparent;
     cursor: pointer;
-    transition: $ease color, border-bottom-color;
+    transition: $ease color;
 
     &:last-child {
       margin-right: 0;
@@ -26,6 +26,11 @@ $parent: header-nav;
       color: $white;
       border-bottom: rem(1) solid $white;
       transition: $ease all;
+    }
+
+    @include modifier(&, "active") {
+      color: $white;
+      border-bottom: rem(1) solid $white;
     }
 
     @include modifier(&, "margin") {

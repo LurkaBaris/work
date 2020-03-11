@@ -79,7 +79,6 @@ $parent: footer-contact;
 
     @media (max-width: $m533) {
       display: block;
-      margin-right: 0;
       margin: 0 auto;
       margin-bottom: rem(10);
     }
@@ -88,6 +87,7 @@ $parent: footer-contact;
   @include element($parent, "title-span") {
     position: relative;
     color: $red;
+
     &::after {
       content: "";
       position: absolute;
