@@ -124,6 +124,10 @@ svg {
 	}
 
 	@include max-media("mMax") {
-		margin: 0 rem(27);/*40*/
+		margin: 0 rem(40);
+	}
+
+	@include max-media("sMax") {
+		margin: 0 rem(28);
 	}
 }

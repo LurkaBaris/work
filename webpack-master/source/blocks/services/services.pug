@@ -4,7 +4,7 @@ mixin services(servicesData)
   section.services
     .page-container
       .services__title #{servicesData.title}
-      .services__container
+      .services__container.services__container--visible-mm
         each val in items
           if count == 0
             .services__item
@@ -18,3 +18,10 @@ mixin services(servicesData)
               svg.services__arrow
                 use(xlink:href=loadAssets('./svg/red-arrow.svg'))
               -count--
+      .services__accordion-container
+        each val in items
+          .services__accordion-item
+            .services__item-title.services__item-title--accordion #{val.title}
+            .services__content
+              .services__paragraph #{val.paragraph}
+              .services__btn Learn more

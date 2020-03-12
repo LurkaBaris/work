@@ -7,6 +7,10 @@ $parent: experience;
     padding-top: rem(80);
   }
 
+  @include max-media("mMax") {
+    padding-top: rem(50);
+  }
+
   @include element($parent, "container") {
     position: relative;
     display: flex;
@@ -19,13 +23,10 @@ $parent: experience;
       margin-left: 0;
     }
 
-    @include max-media("tMax") {
-      margin-left: 0;
-    }
-
     @include max-media("mMax") {
       flex-direction: column;
       align-items: flex-start;
+      margin-left: 0;
     }
 
     @include modifier(&, "reverse-mm") {
@@ -36,12 +37,22 @@ $parent: experience;
   }
 
   @include element($parent, "content") {
+    margin-right: rem(20);
+
+    @include max-media("mMax") {
+      margin-right: 0;
+    }
+
     @include modifier(&, "black") {
       background-color: $black;
     }
 
     @include modifier(&, "padding") {
       padding: rem(169) rem(170) rem(143) rem(188);
+
+      @include max-media("mMax") {
+        padding: 0;
+      }
     }
   }
 
@@ -52,16 +63,38 @@ $parent: experience;
       margin-bottom: 0;
     }
 
-    @include modifier(&, "margin") {
+    @include max-media("mMax") {
+      margin-bottom: rem(60);
+    }
+
+    @include max-media("sMax") {
+      margin-bottom: rem(50);
+    }
+
+    @include modifier(&, "black-mm") {
+      @include max-media("mMax") {
+        background-color: $black;
+      }
+    }
+
+    @include modifier(&, "compensation") {
       padding-top: rem(184);
 
-      @media (max-width: $t930) {
+      @include max-media("mMax") {
         padding-top: 0;
       }
     }
 
-    @media (max-width: $t930) {
-      margin-bottom: rem(70);
+    @include modifier(&, "padding") {
+      @include max-media("mMax") {
+        padding-top: rem(60);
+        padding-bottom: rem(60);
+      }
+
+      @include max-media("sMax") {
+        padding-top: rem(50);
+        padding-bottom: rem(50);
+      }
     }
   }
 
@@ -80,6 +113,11 @@ $parent: experience;
       font-size: rem(42);
       line-height: rem(50);
     }
+
+    @include max-media("sMax") {
+      font-size: rem(35);
+      line-height: rem(42);
+    }
   }
 
   @include element($parent, "paragraph") {
@@ -91,21 +129,25 @@ $parent: experience;
     line-height: rem(29);
     color: $black;
 
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include max-media("mMax") {
+      max-width: none;
+      margin-bottom: rem(38);
+    }
+
+    @include max-media("sMax") {
+      line-height: rem(26);
+    }
+
     @include modifier(&, "white") {
       color: $white;
     }
 
     @include modifier(&, "width") {
       max-width: rem(298);
-    }
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-
-    @media (max-width: $t930) {
-      max-width: rem(640);
-      margin: 0 auto;
     }
   }
 
@@ -127,24 +169,38 @@ $parent: experience;
   }
 
   @include element($parent, "img") {
+    height: rem(628);
+
     img {
       width: 100%;
       height: 100%;
     }
 
-
     @include max-media("mMax") {
       position: static;
-      height: 360px;
+      height: rem(360);
       margin-bottom: rem(30);
       margin-right: 0;
     }
 
+    @include max-media("sMax") {
+      height: rem(248);
+    }
+
     @include modifier(&, "position") {
       position: absolute;
-      top: rem(-184);
+      bottom: rem(184);
       left: 0;
       margin-right: rem(508);
+
+      @include max-media("mMax") {
+        margin-top: 0;
+      }
+    }
+
+    @include modifier(&, "height") {
+      height: rem(632);
+      /*попробоваь с max-height;*/
     }
   }
 }

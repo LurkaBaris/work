@@ -7,14 +7,14 @@ $parent: footer-contact;
   margin-bottom: rem(118);
   margin-right: rem(39);
 
-  @media (max-width: $d1095) {
-    margin-right: 0;
-  }
-
-  @include max-media("tMax") {
+  @media (max-width: $d1120){
     flex-direction: column;
     margin-right: 0;
-    text-align: center;
+    margin-bottom: rem(120);
+  }
+
+  @media (max-width: $m715) {
+    margin-bottom: rem(80);
   }
 
   @include element($parent, "title") {
@@ -25,14 +25,33 @@ $parent: footer-contact;
     line-height: rem(76);
     color: $white;
 
-    @include max-media("tMax") {
+    @media (max-width: $d1120) {
       max-width: none;
       margin-bottom: rem(50);
+      font-weight: 600;
+      font-size: rem(42);
+      line-height: rem(50);
+    }
+
+    @media (max-width: $m715) {
+      margin-bottom: rem(40);
+      font-size: rem(28);
+      line-height: rem(34);
     }
   }
 
   @include element($parent, "input-container") {
     margin-bottom: rem(79);
+
+    @media (max-width: $d1120) {
+      display: flex;
+      align-items: center;
+    }
+
+    @media (max-width: $m715) {
+      flex-direction: column;
+      margin-bottom: rem(59);
+    }
   }
 
   @include element($parent, "input") {
@@ -51,14 +70,22 @@ $parent: footer-contact;
       margin-bottom: 0;
     }
 
-    @include max-media("tMax") {
-      width: 65%;
-      margin: 0 auto;
-      margin-bottom: rem(40);
+    @media (max-width: $d1120) {
+      margin-bottom: 0;
+      margin-right: rem(50);
+
+      &:last-child {
+        margin-right: 0;
+      }
     }
 
-    @include max-media("sMax") {
-      width: 85%;
+    @media (max-width: $m715) {
+      margin-right: 0;
+      margin-bottom: rem(30);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -70,6 +97,12 @@ $parent: footer-contact;
     font-size: rem(12);
     line-height: rem(22);
     color: $white;
+
+    @media (max-width: $m715) {
+      display: block;
+      margin: 0 auto;
+      text-align: center;
+    }
   }
 
   @include element($parent, "btn") {
@@ -77,10 +110,17 @@ $parent: footer-contact;
     width: rem(274);
     margin-right: rem(37);
 
-    @media (max-width: $m533) {
+    @media (max-width: $d1120) {
+      width: rem(312);
+      height: rem(71);
+      margin-right: rem(48);/*57*/
+    }
+
+    @media (max-width: $m715) {
+      width: 100%;
       display: block;
       margin: 0 auto;
-      margin-bottom: rem(10);
+      margin-bottom: rem(25);
     }
   }
 

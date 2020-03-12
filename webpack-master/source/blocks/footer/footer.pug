@@ -13,16 +13,17 @@ mixin footer(footerData)
                         svg.footer__arrow
                             use(xlink:href=loadAssets('./svg/red-arrow.svg'))
                 .footer__item
-                    .footer__item-links
+                    .footer__item-links.footer__item-links--direction-dm.footer__item-links--direction-mm
                         .footer__title.footer__title--social #{footerData.title_social}
-                        each val in socialLinks
-                            a.footer__social-link(href= val.href)
-                                svg.footer__icon(class= "footer__icon--" + val.modifier)
-                                    use(xlink:href=loadAssets(val.svg))
-                    .footer__item-links
+                        .footer__social-links
+                            each val in socialLinks
+                                a.footer__social-link(href= val.href)
+                                    svg.footer__icon(class= "footer__icon--" + val.modifier)
+                                        use(xlink:href=loadAssets(val.svg))
+                    .footer__item-links.footer__item-links--direction-mm
                         .footer__contact-info.footer__red #{footerData.mail}
                         .footer__contact-info.footer__red #{footerData.telephone}
-                    .footer__item-links.footer__item-links--column-xs
+                    .footer__item-links.footer__item-links--direction-mm
                         each val in links
                             a.footer__link(href= val.href) #{val.title}
         .page-container

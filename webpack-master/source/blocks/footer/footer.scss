@@ -3,25 +3,40 @@ $parent: footer;
 @include block($parent) {
   margin-top: rem(130);
   padding-top: rem(88);
-  padding-bottom: rem(46);
+  padding-bottom: rem(60);
   background-color: $black;
+
+  @media (max-width: $d1120) {
+    margin-top: rem(60);
+    padding-top: rem(48);
+  }
 
   @include element($parent, "container") {
     display: flex;
     justify-content: space-between;
     margin-right: rem(66);
-    margin-bottom: rem(62);
+    margin-bottom: rem(60);
 
-    @include max-media("tMax") {
+    @media (max-width: $d1120) {
+      margin-right: rem(5);
+    }
+
+    @media (max-width: $m715) {
       flex-direction: column;
+      align-items: center;
       margin-right: 0;
+      margin-bottom: rem(50);
     }
   }
 
   @include element($parent, "item") {
-    @include max-media("tMax") {
-      margin-bottom: rem(40);
+    @media (max-width: $m715) {
+      margin-bottom: rem(50);
       text-align: center;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -32,12 +47,26 @@ $parent: footer;
     font-size: rem(24);
     color: $white;
 
+
+    @media (max-width: $d1120) {
+      margin-bottom: rem(20);
+      font-size: rem(22);
+      line-height: rem(26);
+    }
+
+    @media (max-width: $m715) {
+      font-size: rem(22);
+      line-height: rem(24);
+    }
+
     @include modifier($parent, "social") {
       margin-bottom: 0;
       margin-right: rem(66);
       font-size: rem(18);
 
-      @include max-media("tMax") {
+      @media (max-width: $d1120) {
+        margin-bottom: rem(23);
+        font-size: rem(22);
         margin-right: 0;
       }
     }
@@ -63,31 +92,39 @@ $parent: footer;
     flex-wrap: wrap;
     margin-bottom: rem(40);
 
-    @include modifier($parent, "column-xs") {
-      @include max-media("sMax") {
-        flex-direction: column;
-      }
-    }
+
 
     &:last-child {
       margin-bottom: 0;
     }
 
-    @include max-media("tMax") {
-      justify-content: space-around;
-      margin-bottom: rem(40);
-      text-align: center;
+    @media (max-width: $d1120) {
+      margin-bottom: rem(25);
     }
+
+    @include modifier($parent, "direction-dm") {
+      @media (max-width: $d1120){
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @include modifier($parent, "direction-mm") {
+      @media (max-width: $m715) {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+
+  @include element($parent, "social-links") {
+    display: flex;
   }
 
   @include element($parent, "social-link") {
     margin-right: rem(23);
 
     &:last-child {
-      margin-right: 0;
-    }
-
-    @include max-media("tMax") {
       margin-right: 0;
     }
   }
@@ -132,8 +169,13 @@ $parent: footer;
       margin-right: 0;
     }
 
-    @include max-media("tMax") {
+    @media (max-width: $d1120) {
+      margin-right: rem(25);
+    }
+
+    @media (max-width: $m715) {
       margin-right: 0;
+      margin-bottom: rem(22);
     }
   }
 
@@ -154,12 +196,13 @@ $parent: footer;
       margin-right: 0;
     }
 
-    @include max-media("tMax") {
-      margin-right: 0;
+    @media (max-width: $d1120) {
+      margin-right: rem(20);
     }
 
-    @include max-media("sMax") {
-      margin-bottom: rem(20);
+    @media (max-width: $m715) {
+      margin-right: 0;
+      margin-bottom: rem(22);
 
       &:last-child {
         margin-bottom: 0;
@@ -172,8 +215,14 @@ $parent: footer;
     justify-content: space-between;
     margin-right: rem(246);
 
-    @include max-media("tMax") {
+    @media (max-width: $d1120) {
+      margin-right: rem(149);
+    }
+
+    @media (max-width: $m715) {
       margin-right: 0;
+      flex-direction: column;
+      align-items: center;
     }
   }
 
@@ -183,9 +232,11 @@ $parent: footer;
     font-size: rem(16);
     color: $gray;
 
-    @include modifier($parent, "text-rigth") {
-      @include max-media("mMax") {
-        text-align: right;
+    @media (max-width: $m715) {
+      margin-bottom: rem(22);
+
+      &:last-child {
+        margin-bottom: 0;
       }
     }
   }

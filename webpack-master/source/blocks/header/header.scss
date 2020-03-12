@@ -61,6 +61,11 @@ $parent: header;
       margin-bottom: rem(75);
       padding-top: rem(24);
     }
+
+    @include max-media("sMax") {
+      margin-bottom: rem(48);
+      padding-top: rem(11);
+    }
   }
 
   @include element($parent, "content") {
@@ -89,13 +94,6 @@ $parent: header;
       background-repeat: no-repeat;
       background-position: rem(-17) rem(-90);
     }
-
-    @media (max-width: $m495) {
-      &::after {
-        bottom: rem(11);
-        background-position: rem(-10) rem(-88);
-      }
-    }
   }
 
   @include element($parent, "text-content") {
@@ -105,6 +103,10 @@ $parent: header;
     @include max-media("mMax") {
       margin-left: 0;
       margin-bottom: rem(543);
+    }
+
+    @include max-media("sMax") {
+      margin-bottom: rem(390);
     }
   }
 
@@ -119,12 +121,13 @@ $parent: header;
 
     @include max-media("mMax") {
       margin-bottom: rem(20);
-      font-size: rem(60);
+      font-size: rem(52);/*60*/
       line-height: rem(66);
     }
 
-    @media (max-width: $m495) {
-      font-size: rem(46);
+    @include max-media("sMax") {
+      font-size: rem(36);
+      line-height: rem(42);
     }
   }
 
@@ -137,12 +140,13 @@ $parent: header;
     color: $white;
 
     @include max-media("mMax") {
-      max-width: rem(635);
+      max-width: none;
       line-height: rem(32);
     }
 
-    @media (max-width: $m495) {
-      font-size: rem(18);
+    @include max-media("sMax") {
+      font-size: rem(16);
+      line-height: rem(26);
     }
   }
 
@@ -150,6 +154,7 @@ $parent: header;
     position: absolute;
     left: 0;
     bottom: rem(-136);
+    height: rem(590);
 
     img {
       width: 100%;
@@ -158,19 +163,32 @@ $parent: header;
 
     @include max-media("mMax") {
       bottom: rem(40);
-      height: 550px;
-      margin-right: rem(27);
+      height: rem(550);
+      margin-right: rem(40);
+    }
+
+    @include max-media("sMax") {
+      bottom: rem(130);
+      height: rem(302);
+      margin-right: rem(28);
     }
   }
 
   @include element($parent, "btn-container") {
-    width: rem(239);
+    width: rem(289);
     height: rem(81);
     margin-left: auto;
     margin-right: rem(91);
 
     @include max-media("mMax") {
-      margin-right: rem(80);
+      width: rem(239);
+      height: rem(71);
+      margin-right: rem(87);
+    }
+
+    @include max-media("sMax") {
+      width: rem(310);
+      margin-right: rem(37);
     }
   }
 }

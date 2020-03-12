@@ -3,12 +3,25 @@ $parent: services;
 @include block($parent) {
   margin-top: rem(42);
 
+  @include max-media("mMax") {
+    margin-top: rem(60);
+  }
+
+  @include max-media("sMax") {
+    margin-top: rem(50);
+  }
+
   @include element($parent, "title") {
     margin-bottom: rem(74);
     font-family: $Museo;
     font-weight: 600;
     font-size: rem(54);
     color: $black;
+
+    @include max-media("mMax") {
+      margin-bottom: rem(22);
+      font-size: rem(42);
+    }
   }
 
   @include element($parent, "item") {
@@ -42,41 +55,62 @@ $parent: services;
       transition: $ease opacity;
     }
 
-    @include modifier($parent, "bottom-text") {
-      padding-top: rem(374);
-      padding-bottom: rem(74);
-    }
-
-    @media (max-width: $t930) {
-      width: 50%;
+    @media (max-width: $t877) {
+      width: 100%;
+      padding-top: rem(56);
+      padding-bottom: rem(138);
       border-bottom: none;
-
-      &:nth-child(2n) {
-        border-right: rem(1) solid $black;
-      }
+      border-right: rem(1) solid $black;
 
       &:last-child {
-        width: 100%;
         border-bottom: rem(1) solid $black;
       }
     }
 
-    @include max-media("sMax") {
-      width: 100%;
-      border-right: rem(1) solid $black;
+    @include modifier($parent, "bottom-text") {
+      padding-top: rem(374);
+      padding-bottom: rem(74);
+
+      @media (max-width: $t877) {
+        padding-top: rem(56);
+        padding-bottom: rem(138);
+      }
+    }
+  }
+
+  @include element($parent, "accordion-container") {
+    display: none;
+
+    @include max-media("mMax") {
+      display: block;
+    }
+  }
+
+  @include element($parent, "accordion-item") {
+    width: 100%;
+    border: 1px solid $gray;
+    border-bottom: none;
+
+    &:last-child {
+      border-bottom: 1px solid $gray;
     }
   }
 
   @include element($parent, "container") {
     display: flex;
     align-items: center;
-    @media (max-width: $t930) {
-      flex-wrap: wrap;
+    flex-wrap: wrap;
+
+    @include modifier(&, "visible-mm") {
+      @include max-media("mMax") {
+        display: none;
+      }
     }
   }
 
   @include element($parent, "item-title") {
     min-height: rem(104);
+    max-height: rem(104);
     max-width: rem(167);
     margin: 0 auto;
     font-family: $Museo;
@@ -87,9 +121,31 @@ $parent: services;
     word-wrap: break-word;
     transition: $ease color;
 
-    @media (max-width: $t930) {
+    @media (max-width: $t877) {
       max-width: none;
-      text-align: center;
+    }
+
+    @include modifier(&, "accordion") {
+      position: relative;
+      min-height: 100%;
+      max-width: none;
+      padding: rem(20);
+      font-size: rem(16);
+      border-bottom: 1px solid $gray;
+      cursor: pointer;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: rem(21);
+        transform: translateY(-50%);
+        width: rem(12);
+        height: rem(6);
+        background-image: url("../../assets/svg/services_arrow.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
     }
   }
 
@@ -103,5 +159,40 @@ $parent: services;
     margin: 0 auto;
     opacity: 0;
     transition: $ease opacity;
+  }
+
+  @include element($parent, "content") {
+    padding: rem(25) rem(20) rem(30) rem(20);
+  }
+
+  @include element($parent, "paragraph") {
+    margin-bottom: rem(25);
+    font-family: $Museo;
+    font-weight: 300;
+    font-size: rem(16);
+    line-height: rem(26);
+  }
+
+  @include element($parent, "btn") {
+    position: relative;
+    width: rem(115);
+    font-family: $Museo;
+    font-weight: 600;
+    font-size: rem(16);
+    color: $red;
+    cursor: pointer;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0;
+      width: rem(19);
+      height: rem(10);
+      background-image: url("../../assets/svg/red-arrow.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
   }
 }

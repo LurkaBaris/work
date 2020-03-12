@@ -14,10 +14,10 @@ mixin experience(experienceData)
                   p.experience__paragraph #{item.paragraph}
               +picture(val.picture, "experience__img")
       else
-        .experience__item.experience__item--margin
+        .experience__item.experience__item--compensation.experience__item--black-mm.experience__item--padding
           .page-container
             .experience__container.experience__container--justify-end
-              +picture(val.picture, "experience__img experience__img--position")
+              +picture(val.picture, "experience__img experience__img--height experience__img--position")
               .experience__content.experience__content--black.experience__content--padding
                 each item in val.text
                   p.experience__paragraph.experience__paragraph--white.experience__paragraph--width #{item.paragraph}
