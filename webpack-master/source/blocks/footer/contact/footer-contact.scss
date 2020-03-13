@@ -7,7 +7,7 @@ $parent: footer-contact;
   margin-bottom: rem(118);
   margin-right: rem(39);
 
-  @media (max-width: $d1120){
+  @media (max-width: $d1120) {
     flex-direction: column;
     margin-right: 0;
     margin-bottom: rem(120);
@@ -56,7 +56,7 @@ $parent: footer-contact;
 
   @include element($parent, "input") {
     display: block;
-    width: 100%;/*! 496px*/
+    width: 100%; /*! 496px*/
     margin-bottom: rem(40);
     padding: 0 rem(2) rem(15) rem(2);
     font-family: $Museo;
@@ -113,7 +113,7 @@ $parent: footer-contact;
     @media (max-width: $d1120) {
       width: rem(312);
       height: rem(71);
-      margin-right: rem(48);/*57*/
+      margin-right: rem(48); /*57*/
     }
 
     @media (max-width: $m715) {

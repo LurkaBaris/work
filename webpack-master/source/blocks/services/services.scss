@@ -55,44 +55,27 @@ $parent: services;
       transition: $ease opacity;
     }
 
-    @media (max-width: $t877) {
-      width: 100%;
-      padding-top: rem(56);
-      padding-bottom: rem(138);
-      border-bottom: none;
-      border-right: rem(1) solid $black;
-
-      &:last-child {
-        border-bottom: rem(1) solid $black;
-      }
-    }
-
     @include modifier($parent, "bottom-text") {
       padding-top: rem(374);
       padding-bottom: rem(74);
-
-      @media (max-width: $t877) {
-        padding-top: rem(56);
-        padding-bottom: rem(138);
-      }
     }
   }
 
   @include element($parent, "accordion-container") {
     display: none;
 
-    @include max-media("mMax") {
+    @media (max-width: $t877) {
       display: block;
     }
   }
 
   @include element($parent, "accordion-item") {
     width: 100%;
-    border: 1px solid $gray;
+    border: rem(1) solid $gray;
     border-bottom: none;
 
     &:last-child {
-      border-bottom: 1px solid $gray;
+      border-bottom: rem(1) solid $gray;
     }
   }
 
@@ -101,10 +84,8 @@ $parent: services;
     align-items: center;
     flex-wrap: wrap;
 
-    @include modifier(&, "visible-mm") {
-      @include max-media("mMax") {
-        display: none;
-      }
+    @media (max-width: $t877) {
+      display: none;
     }
   }
 
@@ -121,17 +102,13 @@ $parent: services;
     word-wrap: break-word;
     transition: $ease color;
 
-    @media (max-width: $t877) {
-      max-width: none;
-    }
-
     @include modifier(&, "accordion") {
       position: relative;
       min-height: 100%;
       max-width: none;
       padding: rem(20);
       font-size: rem(16);
-      border-bottom: 1px solid $gray;
+      border-bottom: rem(1) solid $gray;
       cursor: pointer;
 
       &::after {

@@ -4,7 +4,7 @@ mixin services(servicesData)
   section.services
     .page-container
       .services__title #{servicesData.title}
-      .services__container.services__container--visible-mm
+      .services__container
         each val in items
           if count == 0
             .services__item

@@ -11,16 +11,16 @@
       "picture": {
         "sources": {
           "mobile": [
-            "./assets/images/exp__img1_m.png",
-            "./assets/images/exp__img1_m.webp"
+            "./assets/images/exp375_1.png",
+            "./assets/images/exp375_1.png"
           ],
           "tablet": [
-            "./assets/images/exp__img1.png",
-            "./assets/images/exp__img1.webp"
+            "./assets/images/exp768_1.png",
+            "./assets/images/exp768_1.png"
           ],
           "desktop": [
-            "./assets/images/exp__img1.png",
-            "./assets/images/exp__img1.webp"
+            "./assets/images/exp_1.png",
+            "./assets/images/exp_1.webp"
           ],
           "alt": "exp__img1"
         }
@@ -38,16 +38,16 @@
       "picture": {
         "sources": {
           "mobile": [
-            "./assets/images/exp__img2_m.png",
-            "./assets/images/exp__img2_m.webp"
+            "./assets/images/exp375_2.png",
+            "./assets/images/exp375_2.webp"
           ],
           "tablet": [
-            "./assets/images/exp__img2.png",
-            "./assets/images/exp__img2.webp"
+            "./assets/images/exp768_2.png",
+            "./assets/images/exp768_2.webp"
           ],
           "desktop": [
-            "./assets/images/exp__img2.png",
-            "./assets/images/exp__img2.webp"
+            "./assets/images/exp_2.png",
+            "./assets/images/exp_2.webp"
           ]
         },
         "alt": "exp__img2"

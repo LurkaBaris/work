@@ -9,6 +9,7 @@
     "body-scroll-lock": "^2.6.4",
     "lazysizes": "^5.1.2",
     "object-fit-images": "^3.2.4",
+    "objectFitPolyfill": "^2.3.0",
     "svgxuse": "^1.2.6"
   },
   "devDependencies": {

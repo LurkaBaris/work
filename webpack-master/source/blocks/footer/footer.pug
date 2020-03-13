@@ -10,8 +10,6 @@ mixin footer(footerData)
                 .footer__item
                     .footer__title #{footerData.title}
                     a.footer__btn #{footerData.btn}
-                        svg.footer__arrow
-                            use(xlink:href=loadAssets('./svg/red-arrow.svg'))
                 .footer__item
                     .footer__item-links.footer__item-links--direction-dm.footer__item-links--direction-mm
                         .footer__title.footer__title--social #{footerData.title_social}

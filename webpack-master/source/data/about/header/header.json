@@ -3,7 +3,7 @@
     {
       "title": "About",
       "href": "/about.html",
-      "active": "true"
+      "active": true
     },
     {
       "title": "Competencies",
@@ -24,20 +24,20 @@
     {
       "title": "Ru",
       "href": "/ru.html",
-      "type": "lang"
+      "lang": true
     },
     {
       "title": "Cn",
       "href": "/cn.html",
-      "type": "lang"
+      "lang": true
     }
   ],
   "telephone" : "+7 495 232 32 22",
   "picture": {
     "sources": {
       "mobile": [
-        "./assets/images/header-img_m.png",
-        "./assets/images/header-img_m.webp"
+        "./assets/images/header-img375.png",
+        "./assets/images/header-img768.webp"
       ],
       "tablet": [
         "./assets/images/header-img.png",

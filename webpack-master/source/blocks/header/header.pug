@@ -1,6 +1,6 @@
 include /logo/header-logo.pug
 include /nav/header-nav.pug
-include ../../core/btn/btn.pug
+include ../../core/btn-container/btn-container.pug
 include ../../core/picture/picture.pug
 
 mixin header(headerData)
@@ -16,5 +16,7 @@ mixin header(headerData)
         .header__text-content
           .header__title <span class="header__title-span">#{headerData.red_line}</span> #{headerData.title}
           .header__sub-title #{headerData.sub_title}
+      //.test
       +picture(headerData.picture, "header__img")
-      +btn("Plan a project", "header__btn-container")
+      .page-container.page-container--active-sm
+        +btn-container("Plan a project", "header__btn-container")

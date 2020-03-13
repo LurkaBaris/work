@@ -47,7 +47,6 @@ $parent: footer;
     font-size: rem(24);
     color: $white;
 
-
     @media (max-width: $d1120) {
       margin-bottom: rem(20);
       font-size: rem(22);
@@ -73,10 +72,22 @@ $parent: footer;
   }
 
   @include element($parent, "btn") {
+    position: relative;
     font-family: $Museo;
     font-weight: 500;
     font-size: rem(20);
     color: $red;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: rem(-32);
+      transform: translateY(-50%);
+      width: rem(19);
+      height: rem(10);
+      background-image: url("../../assets/svg/red-arrow.svg");
+    }
   }
 
   @include element($parent, "arrow") {
@@ -92,8 +103,6 @@ $parent: footer;
     flex-wrap: wrap;
     margin-bottom: rem(40);
 
-
-
     &:last-child {
       margin-bottom: 0;
     }
@@ -103,7 +112,7 @@ $parent: footer;
     }
 
     @include modifier($parent, "direction-dm") {
-      @media (max-width: $d1120){
+      @media (max-width: $d1120) {
         flex-direction: column;
         align-items: flex-start;
       }

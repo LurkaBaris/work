@@ -4,7 +4,7 @@ mixin header-nav(arrLinks, arrLang)
         if(val.active)
           a.header-nav__link.header-nav__link--active(href= val.href)= val.title
         else
-          if (val.type)
+          if (val.lang)
             a.header-nav__link.header-nav__link--margin(href= val.href)= val.title
           else
             a.header-nav__link(href= val.href)= val.title

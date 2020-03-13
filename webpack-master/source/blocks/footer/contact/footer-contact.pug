@@ -1,4 +1,5 @@
-include ../../../core/btn/btn.pug
+include ../../../core/btn-container/btn-container.pug
+
 mixin footer-contact(contactData)
     -var inputs= contactData.inputs
     .page-container
@@ -8,5 +9,5 @@ mixin footer-contact(contactData)
                 .footer-contact__input-container
                   each val in inputs
                     input.footer-contact__input(placeholder= val.placeholder)
-                +btn("Send", "footer-contact__btn")
+                +btn-container("Send", "footer-contact__btn")
                 .footer-contact__rules !{contactData.rules}
