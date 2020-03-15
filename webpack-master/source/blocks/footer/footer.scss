@@ -3,17 +3,42 @@ $parent: footer;
 @include block($parent) {
   margin-top: rem(130);
   padding-top: rem(88);
-  padding-bottom: rem(46);
-
-  //padding: rem(88) rem(158) rem(46) rem(120);
+  padding-bottom: rem(60);
   background-color: $black;
+
+  @media (max-width: $d1120) {
+    margin-top: rem(60);
+    padding-top: rem(48);
+  }
 
   @include element($parent, "container") {
     display: flex;
     justify-content: space-between;
     margin-right: rem(66);
+    margin-bottom: rem(60);
+
+    @media (max-width: $d1120) {
+      margin-right: rem(5);
+    }
+
+    @media (max-width: $m715) {
+      flex-direction: column;
+      align-items: center;
+      margin-right: 0;
+      margin-bottom: rem(50);
+    }
   }
 
+  @include element($parent, "item") {
+    @media (max-width: $m715) {
+      margin-bottom: rem(50);
+      text-align: center;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
 
   @include element($parent, "title") {
     margin-bottom: rem(33);
@@ -22,18 +47,47 @@ $parent: footer;
     font-size: rem(24);
     color: $white;
 
+    @media (max-width: $d1120) {
+      margin-bottom: rem(20);
+      font-size: rem(22);
+      line-height: rem(26);
+    }
+
+    @media (max-width: $m715) {
+      font-size: rem(22);
+      line-height: rem(24);
+    }
+
     @include modifier($parent, "social") {
       margin-bottom: 0;
       margin-right: rem(66);
       font-size: rem(18);
+
+      @media (max-width: $d1120) {
+        margin-bottom: rem(23);
+        font-size: rem(22);
+        margin-right: 0;
+      }
     }
   }
 
   @include element($parent, "btn") {
+    position: relative;
     font-family: $Museo;
     font-weight: 500;
     font-size: rem(20);
     color: $red;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: rem(-32);
+      transform: translateY(-50%);
+      width: rem(19);
+      height: rem(10);
+      background-image: url("../../assets/svg/red-arrow.svg");
+    }
   }
 
   @include element($parent, "arrow") {
@@ -43,13 +97,37 @@ $parent: footer;
     height: rem(10);
   }
 
-  @include element($parent, "social-links") {
+  @include element($parent, "item-links") {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     margin-bottom: rem(40);
+
     &:last-child {
       margin-bottom: 0;
     }
+
+    @media (max-width: $d1120) {
+      margin-bottom: rem(25);
+    }
+
+    @include modifier($parent, "direction-dm") {
+      @media (max-width: $d1120) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @include modifier($parent, "direction-mm") {
+      @media (max-width: $m715) {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+
+  @include element($parent, "social-links") {
+    display: flex;
   }
 
   @include element($parent, "social-link") {
@@ -61,8 +139,8 @@ $parent: footer;
   }
 
   @include element($parent, "icon") {
-    width: 15px;
-    height: 15px;
+    width: rem(15);
+    height: rem(15);
 
     @include modifier($parent, "fb") {
       width: rem(8);
@@ -84,7 +162,7 @@ $parent: footer;
       height: rem(15);
     }
 
-    @include modifier($parent, "group") {
+    @include modifier($parent, "whats") {
       width: rem(18);
       height: rem(17);
     }
@@ -99,9 +177,18 @@ $parent: footer;
     &:last-child {
       margin-right: 0;
     }
+
+    @media (max-width: $d1120) {
+      margin-right: rem(25);
+    }
+
+    @media (max-width: $m715) {
+      margin-right: 0;
+      margin-bottom: rem(22);
+    }
   }
 
-  @include element($parent, "red-link") {
+  @include element($parent, "red") {
     padding-bottom: rem(5);
     color: $red;
     border-bottom: rem(1) solid $red;
@@ -113,8 +200,57 @@ $parent: footer;
     font-weight: 300;
     font-size: rem(16);
     color: #fff;
+
     &:last-child {
       margin-right: 0;
     }
+
+    @media (max-width: $d1120) {
+      margin-right: rem(20);
+    }
+
+    @media (max-width: $m715) {
+      margin-right: 0;
+      margin-bottom: rem(22);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @include element($parent, "copyright") {
+    display: flex;
+    justify-content: space-between;
+    margin-right: rem(246);
+
+    @media (max-width: $d1120) {
+      margin-right: rem(149);
+    }
+
+    @media (max-width: $m715) {
+      margin-right: 0;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  @include element($parent, "copyright-item") {
+    font-family: $Museo;
+    font-weight: 300;
+    font-size: rem(16);
+    color: $gray;
+
+    @media (max-width: $m715) {
+      margin-bottom: rem(22);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @include element($parent, "copyright-company") {
+    font-weight: 600;
   }
 }

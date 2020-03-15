@@ -116,6 +116,34 @@ svg {
 }
 
 .page-container {
-	max-width: 1200px;
+	max-width: rem(1200);
 	margin: 0 auto;
+
+	@include max-media("dMax") {
+		margin: 0 rem(10);
+	}
+
+	@include max-media("mMax") {
+		margin: 0 rem(40);
+	}
+
+	@include max-media("sMax") {
+		margin: 0 rem(28);
+	}
+
+	@include modifier(&, "active-sm") {
+		max-width: none;
+
+		@include max-media("dMax") {
+			margin: 0;
+		}
+
+		@include max-media("mMax") {
+			margin: 0;
+		}
+
+		@include max-media("sMax") {
+			margin: 0 rem(28);
+		}
+	}
 }

@@ -1,8 +1,15 @@
 $parent: experience;
-$indent: 184;
 
 @include block($parent) {
-  padding-top: rem(134);
+  padding-top: rem(130);
+
+  @include max-media("tMax") {
+    padding-top: rem(80);
+  }
+
+  @include max-media("tMax") {
+    padding-top: rem(50);
+  }
 
   @include element($parent, "container") {
     position: relative;
@@ -15,15 +22,37 @@ $indent: 184;
       justify-content: flex-end;
       margin-left: 0;
     }
+
+    @include max-media("tMax") {
+      flex-direction: column;
+      margin-left: 0;
+    }
+
+    @include modifier(&, "reverse-mm") {
+      @include max-media("tMax") {
+        flex-direction: column-reverse;
+      }
+    }
   }
 
   @include element($parent, "content") {
+    margin-right: rem(20);
 
-    @include modifier(&,"black") {
+    @include max-media("tMax") {
+      margin-right: 0;
+    }
+
+    @include modifier(&, "black") {
       background-color: $black;
     }
-    @include modifier(&,"padding") {
+
+    @include modifier(&, "padding") {
       padding: rem(169) rem(170) rem(143) rem(188);
+      margin-right: 0;
+
+      @include max-media("tMax") {
+        padding: 0;
+      }
     }
   }
 
@@ -34,8 +63,38 @@ $indent: 184;
       margin-bottom: 0;
     }
 
-    @include modifier(&, "margin") {
-      padding-top: rem($indent);
+    @include max-media("tMax") {
+      margin-bottom: rem(60);
+    }
+
+    @include max-media("sMax") {
+      margin-bottom: rem(50);
+    }
+
+    @include modifier(&, "black-mm") {
+      @include max-media("tMax") {
+        background-color: $black;
+      }
+    }
+
+    @include modifier(&, "compensation") {
+      padding-top: rem(184);
+
+      @include max-media("tMax") {
+        padding-top: 0;
+      }
+    }
+
+    @include modifier(&, "padding") {
+      @include max-media("tMax") {
+        padding-top: rem(60);
+        padding-bottom: rem(60);
+      }
+
+      @include max-media("sMax") {
+        padding-top: rem(50);
+        padding-bottom: rem(50);
+      }
     }
   }
 
@@ -45,7 +104,20 @@ $indent: 184;
     font-family: $Museo;
     font-weight: 600;
     font-size: rem(54);
+    line-height: rem(76);
     color: $black;
+
+    @include max-media("tMax") {
+      max-width: none;
+      margin-bottom: rem(20);
+      font-size: rem(42);
+      line-height: rem(50);
+    }
+
+    @include max-media("sMax") {
+      font-size: rem(35);
+      line-height: rem(42);
+    }
   }
 
   @include element($parent, "paragraph") {
@@ -57,6 +129,19 @@ $indent: 184;
     line-height: rem(29);
     color: $black;
 
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include max-media("tMax") {
+      max-width: none;
+      margin-bottom: rem(38);
+    }
+
+    @include max-media("sMax") {
+      line-height: rem(26);
+    }
+
     @include modifier(&, "white") {
       color: $white;
     }
@@ -64,15 +149,12 @@ $indent: 184;
     @include modifier(&, "width") {
       max-width: rem(298);
     }
-
-    &:last-child {
-      margin-bottom: 0;
-    }
   }
 
   @include element($parent, "title-span") {
     position: relative;
     color: $red;
+
     &::after {
       content: "";
       position: absolute;
@@ -87,21 +169,45 @@ $indent: 184;
   }
 
   @include element($parent, "img") {
-    img {
-      width: 100%;
-      height: 100%;
+    height: rem(628);
+
+   /*  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      max-width: 528px;
+    }
+ */
+    @include max-media("tMax") {
+      position: relative;
+      height: rem(360);
+      margin-bottom: rem(30);
+      margin-right: 0;
+
+     /*  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        max-width: 688px;
+      } */
+    }
+
+    @include max-media("sMax") {
+      height: rem(248);
     }
 
     @include modifier(&, "position") {
       position: absolute;
+      bottom: rem(184);
       left: 0;
-      right: rem(598);
-      top: rem(-184);
+      margin-right: rem(508);
+
+    /*   @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        max-width: 602px;
+      }
+ */
+      @include max-media("tMax") {
+        margin-top: 0;
+        bottom: 0;
+      }
     }
 
-    @include modifier(&, "size") {
-      /* width: rem(602);
-      height: rem(652); */
+    @include modifier(&, "height") {
+      height: rem(632);
     }
   }
 }

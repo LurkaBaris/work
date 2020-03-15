@@ -2,6 +2,11 @@ $parent: header-nav;
 
 @include block($parent) {
   margin-left: rem(88);
+
+  @include max-media("tMax") {
+    display: none;
+  }
+
   @include element($parent, "link") {
     margin-right: rem(53);
     padding-bottom: rem(9);
@@ -11,7 +16,7 @@ $parent: header-nav;
     color: #898a8c;
     border-bottom: rem(1) solid transparent;
     cursor: pointer;
-    transition: $ease color, border-bottom-color;
+    transition: $ease color;
 
     &:last-child {
       margin-right: 0;
@@ -21,6 +26,11 @@ $parent: header-nav;
       color: $white;
       border-bottom: rem(1) solid $white;
       transition: $ease all;
+    }
+
+    @include modifier(&, "active") {
+      color: $white;
+      border-bottom: rem(1) solid $white;
     }
 
     @include modifier(&, "margin") {

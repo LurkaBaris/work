@@ -1,1 +1,1 @@
-require('./services.scss')
+require('./services.scss');

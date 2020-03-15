@@ -1,25 +1,27 @@
-mixin services
+mixin services(servicesData)
+  -var items = servicesData.items;
+  -var count = 0;
   section.services
     .page-container
-      .services__title Our services
+      .services__title #{servicesData.title}
       .services__container
-        .services__item
-          .services__item-title expo
-          svg.services__arrow
-            use(xlink:href=loadAssets('./svg/red-arrow.svg'))
-        .services__item.services__item--bottom-text
-          .services__item-title event
-          svg.services__arrow
-            use(xlink:href=loadAssets('./svg/red-arrow.svg'))
-        .services__item
-          .services__item-title promo
-          svg.services__arrow
-            use(xlink:href=loadAssets('./svg/red-arrow.svg'))
-        .services__item.services__item--bottom-text
-          .services__item-title digital
-          svg.services__arrow
-            use(xlink:href=loadAssets('./svg/red-arrow.svg'))
-        .services__item
-          .services__item-title.services__item-title--two-line production
-          svg.services__arrow
-            use(xlink:href=loadAssets('./svg/red-arrow.svg'))
+        each val in items
+          if count == 0
+            .services__item
+              .services__item-title #{val.title}
+              svg.services__arrow
+                use(xlink:href=loadAssets('./svg/red-arrow.svg'))
+              -count++
+          else
+            .services__item.services__item--bottom-text
+              .services__item-title #{val.title}
+              svg.services__arrow
+                use(xlink:href=loadAssets('./svg/red-arrow.svg'))
+              -count--
+      .services__accordion-container
+        each val in items
+          .services__accordion-item
+            .services__item-title.services__item-title--accordion #{val.title}
+            .services__content
+              .services__paragraph #{val.paragraph}
+              .services__btn Learn more

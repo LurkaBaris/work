@@ -1,0 +1,62 @@
+{
+  "title": "Brief us with your key targets.",
+  "btn": "Let’s talk",
+  "title_social": "Get in touch",
+  "mail": "hello@gem.com",
+  "telephone": "+7 (495) 899-8998",
+  "copyright": "© 2019 Gem. All rights reserved.",
+  "copyright_design": "Design by <span class='footer__copyright-company'>idem.agency</span>",
+  "contact" : {
+      "title": "Send an application and we will send you our <span class='footer-contact__title-span footer-contact__title-span--transform'>portf</span><span class='footer-contact__title-span'>olio</span>",
+      "inputs": [
+        {
+          "placeholder": "Name"
+        },
+        {
+          "placeholder": "E-mail"
+        }
+      ],
+      "rules": "By submitting the form you agree with the <a href='./rules.html' class='footer__red'>Terms of conditions</a>"
+    },
+    "social_links": [
+      {
+        "svg": "./svg/fb.svg",
+        "href": "https://www.facebook.com/",
+        "modifier": "fb"
+      },
+      {
+        "svg": "./svg/behance.svg",
+        "href": "https://www.behance.net/",
+        "modifier": "bh"
+      },
+      {
+        "svg": "./svg/inst.svg",
+        "href": "https://www.instagram.com/",
+        "modifier": "inst"
+      },
+      {
+        "svg": "./svg/wechat.svg",
+        "href": "https://www.wechat.com/",
+        "modifier": "wechat"
+      },
+      {
+        "svg": "./svg/group.svg",
+        "href": "https://www.whatsapp.com/",
+        "whats": "whats"
+      }
+    ],
+    "links": [
+      {
+        "title": "Our offices",
+        "href": "./offices.html"
+      },
+      {
+        "title": "Join the team",
+        "href": "./team.html"
+      },
+      {
+        "title": "Terms of use",
+        "href": "./terms.html"
+      }
+    ]
+}
