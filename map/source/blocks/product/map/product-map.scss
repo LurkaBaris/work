@@ -1,0 +1,6 @@
+$parent: product-map;
+
+@include block($parent) {
+	width: 600px;
+	height: 400px;
+}

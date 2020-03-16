@@ -1,0 +1,36 @@
+$parent: product;
+
+@include block($parent) {
+	display: flex;
+	justify-content: space-between;
+	max-width: rem(900);
+
+	@include element($parent, "item") {
+		padding: rem(15);
+		margin-bottom: rem(25);
+		background-color: #f6f6f6;
+		cursor: pointer;
+		transition: $ease all;
+
+		&:hover {
+			background-color: $black;
+			color: $white;
+			transition: $ease all;
+		}
+
+		@include modifier($parent, "active") {
+			background-color: $black;
+			color: $white;
+			transition: $ease all;
+		}
+	}
+
+	@include element($parent, "title") {
+		margin-bottom: rem(15);
+		font-size: rem(24);
+	}
+
+	@include element($parent, "paragraph") {
+		margin-bottom: rem(10);
+	}
+}

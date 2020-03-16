@@ -1,0 +1,13 @@
+include ./map/product-map.pug
+
+mixin product(productData)
+	- var items = productData.items
+	.product
+		+product-map
+		if (items)
+			.product__content
+				each item in items
+					.product__item
+						.product__title #{item.title}
+						.product__paragraph #{item.content}
+						.product__adress #{item.adress}

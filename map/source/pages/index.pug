@@ -1,0 +1,8 @@
+extends ../layouts/main.pug
+include ../blocks/product/product.pug
+
+block vars
+	- var productData = require('../data/product/product.json');
+
+block content
+	+product(productData)
