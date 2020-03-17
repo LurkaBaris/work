@@ -32,7 +32,6 @@ html(lang='ru')
 		if (htmlWebpackPlugin.files.extracted && htmlWebpackPlugin.files.extracted.css)
 			each css in htmlWebpackPlugin.files.extracted.css
 				link(rel='stylesheet', href=('../' + css.file), media=css.query)
-		script(src="https://api-maps.yandex.ru/2.1/?apikey=d447d67d-d2b3-4db7-bba0-8a48fb1310f0&lang=ru_RU")
 
 	body
 		.page
@@ -40,6 +39,6 @@ html(lang='ru')
 			block content
 		// +footer(footerData)
 		+popup-layout
-
+		script(src="https://api-maps.yandex.ru/2.1/?apikey=d447d67d-d2b3-4db7-bba0-8a48fb1310f0&lang=ru_RU")
 		each js in htmlWebpackPlugin.files.js
 			script(type='text/javascript', src=js, async, defer)

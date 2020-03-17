@@ -2,7 +2,7 @@ extends ../layouts/main.pug
 include ../blocks/product/product.pug
 
 block vars
-	- var productData = require('../data/product/product.json');
+	- var indexData = require('../data/index/index.json');
 
 block content
-	+product(productData)
+	+product(indexData)

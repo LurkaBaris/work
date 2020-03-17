@@ -6,6 +6,7 @@ $parent: product;
 	max-width: rem(900);
 
 	@include element($parent, "item") {
+		position: relative;
 		padding: rem(15);
 		margin-bottom: rem(25);
 		background-color: #f6f6f6;
