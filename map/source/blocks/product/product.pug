@@ -6,11 +6,3 @@ mixin product(productData)
 		.product
 			if (data.map)
 				+product-map
-			if (data.items)
-				.product__content
-					each item in data.items
-						if(item.title && item.content && item.adress)
-							.product__item
-								.product__title #{item.title}
-								.product__paragraph #{item.content}
-								.product__adress #{item.adress}

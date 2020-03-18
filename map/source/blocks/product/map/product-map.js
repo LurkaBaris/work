@@ -2,10 +2,10 @@
 require('./product-map.scss');
 
 export default class ProductMap {
-	constructor(json) {
+	constructor(json, container) {
 		this.json = json;
 		this.countMiss = 0;
-		this.items = document.querySelectorAll('.product__item');
+		this.items = container.querySelectorAll('.product__item');
 	}
 	// eslint-disable-next-line no-console
 	resetActive() {
@@ -14,7 +14,8 @@ export default class ProductMap {
 		});
 	}
 
-	changeMarker(map, index, reset){
+	// eslint-disable-next-line class-methods-use-this
+	changeMarker(map, index, reset) {
 		if (reset) {
 			const geoObject = map.geoObjects.get(index);
 			geoObject.options.set('preset', 'islands#blueIcon');
@@ -39,7 +40,6 @@ export default class ProductMap {
 			});
 
 			const indexTrue = (index === 0) ? index : index - this.countMiss;
-
 			arrItems[index].addEventListener('click', () => {
 				this.resetActive(arrItems);
 				const geoObject = map.geoObjects.get(indexTrue);
@@ -86,8 +86,7 @@ export default class ProductMap {
 				center: coords,
 				zoom,
 			});
-			const items = document.querySelectorAll('.product__item');/*уйдет*/
-			this.addMark(myMap, items);
+			this.addMark(myMap, this.items);
 		});
 	}
 }
