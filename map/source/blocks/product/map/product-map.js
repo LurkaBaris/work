@@ -4,7 +4,7 @@ require('./product-map.scss');
 export default class ProductMap {
 	constructor(json, container) {
 		this.json = json;
-		this.countMiss = 0;
+		this.missItem = 0;
 		this.items = container.querySelectorAll('.product__item');
 	}
 	// eslint-disable-next-line no-console
@@ -27,53 +27,53 @@ export default class ProductMap {
 
 	addMark(map, arrItems) {
 		this.json.product.items.forEach((item, index) => {
-			if (!item.mapPoint.coords) {
-				this.countMiss += 1;
-				return;
-			}
-
-			const placeMark = new ymaps.Placemark(item.mapPoint.coords, {
-				balloonContentHeader: item.mapPoint.balloonHeader,
-				balloonContentBody: item.mapPoint.balloonBody,
-				balloonContentFooter: item.mapPoint.ballonFooter,
-				hintContent: item.mapPoint.hint,
-			});
-
-			const indexTrue = (index === 0) ? index : index - this.countMiss;
-			arrItems[index].addEventListener('click', () => {
-				this.resetActive(arrItems);
-				const geoObject = map.geoObjects.get(indexTrue);
-				geoObject.balloon.open(map.getCenter());
-				arrItems[index].classList.add('product__item--active');
-			});
-
-			arrItems[index].addEventListener('mouseenter', () => {
-				this.changeMarker(map, indexTrue);
-			});
-
-			arrItems[index].addEventListener('mouseleave', () => {
-				this.changeMarker(map, indexTrue, true);
-			});
-
-			placeMark.events
-				.add('balloonclose', () => {
-					arrItems[index].classList.remove('product__item--active');
-				})
-				.add('click', () => {
-					this.resetActive(arrItems);
-					this.changeMarker(map, indexTrue, true);
-					arrItems[index].classList.add('product__item--active');
-				})
-				.add('mouseenter', () => {
-					this.changeMarker(map, indexTrue);
-					arrItems[index].classList.add('product__item--active');
-				})
-				.add('mouseleave', () => {
-					this.changeMarker(map, indexTrue, true);
-					arrItems[index].classList.remove('product__item--active');
+			if (item.title && item.content && item.address && item.mapPoint) {
+				const placeMark = new ymaps.Placemark(item.mapPoint.coords, {
+					balloonContentHeader: item.mapPoint.balloonHeader,
+					balloonContentBody: item.mapPoint.balloonBody,
+					balloonContentFooter: item.mapPoint.ballonFooter,
+					hintContent: item.mapPoint.hint,
 				});
 
-			map.geoObjects.add(placeMark);
+				const indexItem = (index === 0) ? index : index - this.missItem;
+
+				arrItems[indexItem].addEventListener('click', () => {
+					this.resetActive(arrItems);
+					const geoObject = map.geoObjects.get(indexItem);
+					geoObject.balloon.open(map.getCenter());
+					arrItems[indexItem].classList.add('product__item--active');
+				});
+
+				arrItems[indexItem].addEventListener('mouseenter', () => {
+					this.changeMarker(map, indexItem);
+				});
+
+				arrItems[indexItem].addEventListener('mouseleave', () => {
+					this.changeMarker(map, indexItem, true);
+				});
+
+				placeMark.events
+					.add('balloonclose', () => {
+						arrItems[indexItem].classList.remove('product__item--active');
+					})
+					.add('click', () => {
+						this.resetActive(arrItems);
+						this.changeMarker(map, indexItem, true);
+						arrItems[indexItem].classList.add('product__item--active');
+					})
+					.add('mouseenter', () => {
+						this.changeMarker(map, indexItem);
+						arrItems[indexItem].classList.add('product__item--active');
+					})
+					.add('mouseleave', () => {
+						this.changeMarker(map, indexItem, true);
+						arrItems[indexItem].classList.remove('product__item--active');
+					});
+
+				map.geoObjects.add(placeMark);
+			} else {
+				this.missItem += 1;
+			}
 		});
 	}
 
