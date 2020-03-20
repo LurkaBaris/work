@@ -39,6 +39,5 @@ html(lang='ru')
 			block content
 		// +footer(footerData)
 		+popup-layout
-		script(src="https://api-maps.yandex.ru/2.1/?apikey=d447d67d-d2b3-4db7-bba0-8a48fb1310f0&lang=ru_RU")
 		each js in htmlWebpackPlugin.files.js
 			script(type='text/javascript', src=js, async, defer)

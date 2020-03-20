@@ -9,7 +9,8 @@
     "body-scroll-lock": "^2.6.4",
     "lazysizes": "^5.1.2",
     "object-fit-images": "^3.2.4",
-    "svgxuse": "^1.2.6"
+    "svgxuse": "^1.2.6",
+    "ymaps": "^0.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.7.2",

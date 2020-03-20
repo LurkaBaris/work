@@ -30,3 +30,7 @@ Array.from(document.querySelectorAll('[data-popup]')).forEach((btn) => {
 		}
 	});
 });
+
+if (typeof NodeList.prototype.forEach !== 'function') {
+	NodeList.prototype.forEach = Array.prototype.forEach;
+}
