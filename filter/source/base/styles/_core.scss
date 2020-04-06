@@ -1,0 +1,116 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+	print-color-adjust: exact; // stylelint-disable-line
+	-webkit-tap-highlight-color: transparent;
+	outline: 0;
+
+	&::after,
+	&::before {
+		box-sizing: border-box;
+	}
+}
+
+html {
+	font-size: 16px;
+
+	@media screen and (max-width: 374px) {
+		font-size: 14.5px;
+	}
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+
+	@media print {
+		width: 297mm;
+		height: 209mm;
+	}
+}
+
+a {
+	text-decoration: none;
+	outline: 0;
+	cursor: pointer;
+	transition: color $ease;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+img {
+	display: block;
+}
+
+input {
+	border: none;
+	padding: 0;
+	margin: 0;
+
+	&[type=number] {
+		-moz-appearance: textfield;
+
+		&::-webkit-outer-spin-button,
+		&::-webkit-inner-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+		}
+	}
+}
+
+textarea {
+	resize: none;
+}
+
+button,
+input,
+textarea,
+select {
+	background-color: transparent;
+	border: 0;
+	border-radius: 0;
+	outline: 0;
+	transition: border $ease, color $ease;
+	cursor: pointer;
+
+	&::-ms-clear,
+	&::-ms-reveal {
+		display: none;
+	}
+
+	&::-moz-focus-inner,
+	&::-moz-focus-outer {
+		border: 0;
+	}
+}
+
+svg {
+	display: block;
+	width: 100%;
+	height: 100%;
+	transition: fill $ease, stroke $ease;
+	pointer-events: none;
+}
+
+.page {
+	flex: 1 0 auto;
+	overflow: hidden;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}

@@ -1,0 +1,43 @@
+mixin main(indexPage)
+	if (indexPage.main)
+		-var content = indexPage.main;
+		.main
+			.main__filter(id= "filter")
+				if(content.title && content['sub-title'])
+					.main__filter-content
+						if (content.title)
+							.main__title #{content.title}
+						if (content['sub-title'])
+							.main__sub-title #{content['sub-title']}
+				if (content.control)
+					.main__control
+						each item in content.control
+							.main__control-item
+								if(item.title)
+									.main__control-title #{item.title}
+								if (item.range)
+									.main__range-container.main__price
+										input.main__range-input(type="range" value="0" @input="inputLower($event)")
+										input.main__range-input(type="range" value="100" @input="inputUpper($event)")
+								else
+									select.custom-select(@change="onChange()")
+										option(selected value= "") Все
+										each arrItem, index in item.values
+											option(value= index+1) #{arrItem.value}
+			if (content.items && content.feature)
+				.main__container
+					if (content.feature)
+						.main__feature
+							each item in content.feature
+								if (item.value)
+									.main__feature-item #{item.value}
+					if (content.items)
+						each item, index in content.items
+							.main__item
+								.main__info ##{index+1}
+								if (item.housing)
+									.main__info #{item.housing}
+								if (item.floor)
+									.main__info #{item.floor}
+								if (item.rooms)
+									.main__info #{item.rooms}

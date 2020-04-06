@@ -1,0 +1,119 @@
+{
+	"main": {
+		"title" : "Выбор квартир",
+		"sub-title" : "Покупая квартиры в наших домах",
+		"control": [
+			{
+				"title": "Корпус",
+				"values": [
+					{
+						"value": 1
+					},
+					{
+						"value": 2
+					},
+					{
+						"value": 3
+					}
+				]
+			},
+			{
+				"title": "Этаж",
+				"values": [
+					{
+						"value": 1
+					},
+					{
+						"value": 2
+					},
+					{
+						"value": 3
+					},
+					{
+						"value": 4
+					},
+					{
+						"value": 5
+					}
+				]
+			},
+			{
+				"title": "Комнат",
+				"values": [
+					{
+						"value": 1
+					},
+					{
+						"value": 2
+					},
+					{
+						"value": 3
+					},
+					{
+						"value": 4
+					}
+				]
+			},
+			{
+				"title": "Площадь, м2",
+				"range": true
+			}
+		],
+		"feature": [
+			{
+				"value": "Номер"
+			},
+			{
+				"value": "Корпус"
+			},
+			{
+				"value": "Этаж"
+			},
+			{
+				"value": "Комнат"
+			}
+		],
+		"items": [
+			{
+				"housing": 1,
+				"floor": 1,
+				"rooms": 1
+			},
+			{
+				"housing": 2,
+				"floor": 2,
+				"rooms": 2
+			},
+			{
+				"housing": 3,
+				"floor": 3,
+				"rooms": 3
+			},
+			{
+				"housing": 1,
+				"floor": 2,
+				"rooms": 3
+			}
+			,{
+				"housing": 3,
+				"floor": 2,
+				"rooms": 1
+			}
+			,{
+				"housing": 2,
+				"floor": 3,
+				"rooms": 2
+			},
+			{
+				"housing": 1,
+				"floor": 4,
+				"rooms": 2
+			},
+			{
+				"housing": 2,
+				"floor": 5,
+				"rooms": 4
+			}
+		]
+	}
+}
