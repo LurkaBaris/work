@@ -1,21 +1,22 @@
-/* eslint-disable no-undef */
+import ymaps from 'ymaps';
+
 require('./product-map.scss');
 
 export default class ProductMap {
 	constructor(json, container) {
 		this.json = json;
 		this.missItem = 0;
+		this.container = container;
 		this.items = container.querySelectorAll('.product__item');
+		this.init();
 	}
-	// eslint-disable-next-line no-console
 	resetActive() {
 		this.items.forEach((item) => {
 			item.classList.remove('product__item--active');
 		});
 	}
 
-	// eslint-disable-next-line class-methods-use-this
-	changeMarker(map, index, reset) {
+	static changeMarker(map, index, reset) {
 		if (reset) {
 			const geoObject = map.geoObjects.get(index);
 			geoObject.options.set('preset', 'islands#blueIcon');
@@ -25,10 +26,10 @@ export default class ProductMap {
 		}
 	}
 
-	addMark(map, arrItems) {
+	addMark(maps, map, arrItems) {
 		this.json.product.items.forEach((item, index) => {
 			if (item.title && item.content && item.address && item.mapPoint) {
-				const placeMark = new ymaps.Placemark(item.mapPoint.coords, {
+				const placeMark = new maps.Placemark(item.mapPoint.coords, {
 					balloonContentHeader: item.mapPoint.balloonHeader,
 					balloonContentBody: item.mapPoint.balloonBody,
 					balloonContentFooter: item.mapPoint.ballonFooter,
@@ -45,11 +46,10 @@ export default class ProductMap {
 				});
 
 				arrItems[indexItem].addEventListener('mouseenter', () => {
-					this.changeMarker(map, indexItem);
+					ProductMap.changeMarker(map, indexItem);
 				});
-
 				arrItems[indexItem].addEventListener('mouseleave', () => {
-					this.changeMarker(map, indexItem, true);
+					ProductMap.changeMarker(map, indexItem, true);
 				});
 
 				placeMark.events
@@ -58,15 +58,15 @@ export default class ProductMap {
 					})
 					.add('click', () => {
 						this.resetActive(arrItems);
-						this.changeMarker(map, indexItem, true);
+						ProductMap.changeMarker(map, indexItem, true);
 						arrItems[indexItem].classList.add('product__item--active');
 					})
 					.add('mouseenter', () => {
-						this.changeMarker(map, indexItem);
+						ProductMap.changeMarker(map, indexItem);
 						arrItems[indexItem].classList.add('product__item--active');
 					})
 					.add('mouseleave', () => {
-						this.changeMarker(map, indexItem, true);
+						ProductMap.changeMarker(map, indexItem, true);
 						arrItems[indexItem].classList.remove('product__item--active');
 					});
 
@@ -77,16 +77,18 @@ export default class ProductMap {
 		});
 	}
 
-	init(coords, zoom) {
-		if (typeof NodeList.prototype.forEach !== 'function') {
-			NodeList.prototype.forEach = Array.prototype.forEach;
-		}
-		ymaps.ready(() => {
-			const myMap = new ymaps.Map('product-map', {
-				center: coords,
-				zoom,
+	init() {
+		ymaps
+			.load('https://api-maps.yandex.ru/2.1/?apikey=d447d67d-d2b3-4db7-bba0-8a48fb1310f0&lang=ru_RU')
+			.then((maps) => {
+				const map = new maps.Map('product-map', {
+					center: [55.76, 37.64],
+					zoom: 14,
+				});
+				this.addMark(maps, map, this.items);
+			})
+			.catch(() => {
+				this.container.remove();
 			});
-			this.addMark(myMap, this.items);
-		});
 	}
 }

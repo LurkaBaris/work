@@ -9,7 +9,9 @@
     "pageYOffset": true,
     "google": true,
     "GoogleMapsLoader": true,
-    "IS_DEV": true
+		"IS_DEV": true,
+		"ymaps": true,
+		"NodeList": true
   },
   "extends": "airbnb-base",
   "parser": "babel-eslint",
